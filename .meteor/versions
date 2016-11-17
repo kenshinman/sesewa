@@ -62,7 +62,6 @@ es5-shim@4.5.13
 facebook@1.2.8
 fastclick@1.0.12
 fortawesome:fontawesome@4.7.0
-gadicohen:phantomjs@0.0.2
 geojson-utils@1.0.9
 google@1.1.13
 gwendall:accounts-helpers@0.1.6
@@ -149,6 +148,7 @@ templating@1.1.14
 templating-tools@1.0.4
 tmeasday:paginated-subscription@0.2.4
 tracker@1.0.15
+twbs:bootstrap@3.3.6
 twitter@1.1.11
 ui@1.0.11
 underscore@1.0.9

@@ -39,7 +39,7 @@ momentjs:moment
 meteorhacks:search-source
 utilities:avatar
 joncursi:socket-io-client
-gadicohen:phantomjs
+#gadicohen:phantomjs
 spiderable
 splendido:accounts-meld
 houston:admin
@@ -49,4 +49,5 @@ fortawesome:fontawesome
 http
 gwendall:accounts-helpers
 matb33:collection-hooks
+twbs:bootstrap
 
