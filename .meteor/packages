@@ -19,3 +19,42 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
+
+aldeed:collection2
+aldeed:autoform
+mrt:flash-messages
+iron:router
+cfs:standard-packages
+cfs:gridfs
+accounts-ui
+accounts-password
+joshowens:accounts-entry
+alanning:roles
+accounts-facebook
+accounts-twitter
+accounts-google
+check
+random
+momentjs:moment
+meteorhacks:search-source
+utilities:avatar
+joncursi:socket-io-client
+gadicohen:phantomjs
+spiderable
+splendido:accounts-meld
+houston:admin
+session
+email
+fortawesome:fontawesome
+http
+gwendall:accounts-helpers
+matb33:collection-hooks
+easy:search
+flawless:meteor-toastr
+reywood:iron-router-ga
+gadicohen:sitemaps
+udondan:slick
+meteorhacks:fast-render
+mizzao:user-status
+kurounin:pagination
+kurounin:pagination-blaze
