@@ -1,3 +1,327 @@
 <template name="home">
-    <h1 class="text-center">Home</h1>
+    <div class="jumbotron cta">
+        <div class="container">
+            <h1 class="cta-title">Launch your career with <strong>Sesewa</strong></h1>
+            <div class="row cta-search-form-wrap">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                   {{> searchForm}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-section-collage-wrap">
+        <div class="home-section home-section-collage home-section-opportunities">
+            <div class="container">
+                <h3 class="home-section-title">Featured Opportunities</h3>
+
+                {{> homeOpportunities}}
+
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg multi-level-button" data-toggle="modal" data-target="#signupModal">
+                        <strong>Sign Up Free</strong>
+                        <br>
+                        <small>Wonderful opportunities await</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!--    partner logos-->
+    <div class="home-section home-section-blue-bg home-section-partners">
+        <div class="container">
+            {{> homePartners}}
+        </div>
+    </div>
+
+<!--blog-->
+
+    {{> homeBlog}}
+
+<!--testimonials-->
+    {{> homeTestimonials}}
 </template>
+
+
+<template name="searchForm">
+    <form class="row" id="search-form">
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="cta-s-form-job-type">Choose a job type</label>
+            <select id="cta-s-form-job-type" class="form-control">
+                <option>Internship</option>
+                <option>Job Shadowing</option>
+                <option>Volunteering</option>
+                <option>Apprenticeship</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-5 form-group">
+            <label for="cta-s-form-job-type">Choose a specialization</label>
+            <select id="cta-s-form-job-type" class="form-control">
+                <option>Engineering</option>
+                <option>Finance</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-3 form-group">
+            <label class="hidden-xs">&nbsp;</label>
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>
+    </form>
+</template>
+
+
+<template name="homeOpportunities">
+
+    <div class="row opportunities">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="opportunity opportunity--box">
+                <div class="opportunity-image">
+                    <img src="/assets/photo1.png">
+                </div>
+                <div class="opportunity-content">
+                    <a href="#" class="opportunity-title">Volunteers
+                                        needed for the Lagos Fashion Week 2016</a>
+                    <div>
+                        <span class="opportunity-company">Style House Files</span> | <span class="opportunity-location">Lagos, NG</span>
+                    </div>
+                    <span class="label label-default">Volunteering</span>
+                </div>
+                <div class="opportunity-footer">
+                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a href="#" class="primary-link">Apply</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</template>
+
+<template name="homeBlog">
+    <div class="home-section home-section-blog home-section-border-bottom">
+        <div class="container">
+            <h3 class="home-section-title">Academy Blog</h3>
+            <div class="home-section-blog-articles-wrap">
+                <div class="row">
+                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/photo.png">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
+                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/photo.png">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
+                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/assets/photo.png">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
+                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="homeTestimonials">
+    <div class="home-section home-section-testimonials">
+        <div class="container">
+            <h3 class="home-section-title">Testimonials</h3>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="homePartners">
+    <h3 class="home-section-title">Partners</h3>
+            <div class="row">
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="box"></div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="box"></div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="box"></div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="box"></div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-0">
+                    <div class="box"></div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <div class="box"></div>
+                </div>
+            </div>
+></template>
+
