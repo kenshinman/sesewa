@@ -1,0 +1,288 @@
+<template name="setupModal">
+    <div class="modal in" id="setupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block; padding-left: 17px;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div id="setupCarousel" class="carousel slide carousel-setup">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="setup-header-bg"></div>
+                            <div class="modal-body text-center">
+                                <h2 class="text-uppercase">WELCOME TO SESEWA</h2>
+                                <p class="lead text-muted">
+                                    Hooray! You have taken your first step on the journey to career success. Follow the path below to move further
+                                </p>
+                                <br>
+                                <button id="getStartedBtn" type="button" class="btn get-started-btn btn-primary">Take the Next Step <i class="fa fa-arrow-right"></i></button>
+                            </div>
+
+                        </div>
+                        <div class="item">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><i class="fa fa-user"></i> Profile Information</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form id="profile-information">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Profile Picture</label>
+                                                <div id="profilePictureWrap" class="dropzone dz-clickable">
+                                                    <div class="dz-message">
+                                                        <span class="dz-message-default">Drag a photo here</span>
+                                                        <span class="dz-message-hover">Drop photo</span>
+                                                        <span class="note">or click to select one</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                                <select name="gender" class="form-control">
+                                                    <option value="">Please select</option>
+                                                    <option value="F">Female</option>
+                                                    <option value="M">Male</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Date of Birth</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>IM <span class="desc">(Skype or Google Hangouts)</span></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 form-group">
+                                            <label>Current City</label>
+                                            <div class="pos-r">
+                                                <input id="city" type="text" class="form-control">
+                                                <div class="city-autocomplete" style="width: 100%; left: 0px; top: 34px;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 form-group">
+                                            <label>
+                                                Add 2<sup>nd</sup> City
+                                                <a class="popover-trigger fa fa-question-circle-o" tabindex="-1" role="button" data-toggle="popover" data-trigger="focus" data-title="Second City" data-content="If you study in one city (say Lagos) but are from a different city (say Port Harcourt), fill this to be considered for internships in both" data-original-title="" title=""></a>
+                                            </label>
+                                            <div class="pos-r">
+                                                <input id="city2" type="text" class="form-control">
+                                                <div class="city-autocomplete" style="width: 100%; left: 0px; top: 34px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix setup-btn-actions">
+                                        <button type="submit" class="btn btn-primary pull-right" data-carousel-next="">
+                                            Proceed <i class="fa fa-arrow-right"></i></button>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><i class="fa fa-graduation-cap"></i> Education</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label>Level of Education</label>
+                                    <br>
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default" data-toggle="tab" data-target="#preUni">
+                                            <input type="radio" name="education_level" autocomplete="off"> Pre-University
+                                        </label>
+                                        <label class="btn btn-default active" data-toggle="tab" data-target="#undergrad">
+                                            <input type="radio" name="education_level" autocomplete="off" checked=""> Undergraduate
+                                        </label>
+                                        <label class="btn btn-default" data-toggle="tab" data-target="#grad">
+                                            <input type="radio" name="education_level" autocomplete="off"> Graduate
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="preUni">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8 form-group">
+                                                <label>School</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 form-group">
+                                                <label>Current year</label>
+                                                <select class="form-control">
+                                                    <option>JSS 1</option>
+                                                    <option>JSS 2</option>
+                                                    <option>JSS 3</option>
+                                                    <option>SSS 1</option>
+                                                    <option>SSS 2</option>
+                                                    <option>SSS 3</option>
+                                                    <option>Completed Secondary School</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane active" id="undergrad">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8 form-group">
+                                                <label>Institution</label>
+                                                <select class="form-control">
+                                                    <option>Please select an institution</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 form-group">
+                                                <label>Current year</label>
+                                                <select class="form-control">
+                                                    <option>100 Level</option>
+                                                    <option>200 Level</option>
+                                                    <option>300 Level</option>
+                                                    <option>400 Level</option>
+                                                    <option>500 Level</option>
+                                                    <option>600 Level</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-4 form-group">
+                                                <label>Expected Grad<span class="hidden-xs">uation</span><span class="visible-xs-inline">.</span> year</label>
+                                                <select class="form-control">
+                                                    <option>2016</option>
+                                                    <option>2017</option>
+                                                    <option>2018</option>
+                                                    <option>2019</option>
+                                                    <option>2020</option>
+                                                    <option>2021</option>
+                                                    <option>2022</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-4 form-group">
+                                                <label>CGPA</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane" id="grad">
+                                        <div class="form-group">
+                                            <label>Institution</label>
+                                            <select class="form-control"></select>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 form-group">
+                                                <label>Graduating GPA</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 form-group">
+                                                <label>Graduating Class</label>
+                                                <select class="form-control"></select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-6 form-group">
+                                                <label>I am...</label>
+                                                <div>
+                                                    <label class="radio radio-inline">
+                                                        <input type="radio" name="nysc" value="0" checked=""> Awaiting NYSC
+                                                    </label>
+                                                    <label class="radio radio-inline">
+                                                        <input type="radio" name="nysc" value="1"> Currently serving
+                                                    </label>
+                                                    <label class="radio radio-inline">
+                                                        <input type="radio" name="nysc" value="2"> Done with NYSC
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div id="nyscServiceWrap" class="col-xs-12 col-sm-6 form-group">
+                                                <label for="">Expected month of service</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix setup-btn-actions">
+                                    <button type="button" class="btn btn-default pull-left" data-carousel-prev=""><i class="fa fa-arrow-left"></i> Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary pull-right" data-carousel-next="">
+                                        Proceed <i class="fa fa-arrow-right"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><i class="fa fa-star"></i> Preferences</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Preferred Industries</label>
+                                            <select class="form-control select2-hidden-accessible" multiple="" data-activate-select2="" tabindex="-1" aria-hidden="true">
+                                                <option>Engineering</option>
+                                                <option>Science</option>
+                                                <option>Humanities</option>
+                                                <option>Media</option>
+                                                <option>Law</option>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Work type</label>
+                                            <div data-toggle="buttons" class="preferences-btns">
+                                                <label class="btn btn-default btn-block">
+                                                    <input type="checkbox"> Work from home
+                                                    <i class="fa fa-plus"></i></label>
+                                                <label class="btn btn-default btn-block">
+                                                    <input type="checkbox"> Office work
+                                                    <i class="fa fa-plus"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 form-group">
+                                        <label>I'm looking for</label>
+                                        <div data-toggle="buttons" class="preferences-btns">
+                                            <label class="btn btn-default btn-block">
+                                                <input type="checkbox" autocomplete="off"> Internships
+                                                <i class="fa fa-plus"></i></label>
+                                            <label class="btn btn-default btn-block">
+                                                <input type="checkbox" autocomplete="off"> Apprenticeship
+                                                <i class="fa fa-plus"></i></label>
+                                            <label class="btn btn-default btn-block">
+                                                <input type="checkbox" autocomplete="off"> Job Shadowing
+                                                <i class="fa fa-plus"></i></label>
+                                            <label class="btn btn-default btn-block">
+                                                <input type="checkbox" autocomplete="off"> Volunteering
+                                                <i class="fa fa-plus"></i></label>
+                                            <label class="btn btn-default btn-block">
+                                                <input type="checkbox" autocomplete="off"> Training
+                                                <i class="fa fa-plus"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix setup-btn-actions">
+                                    <button type="button" class="btn btn-default pull-left" data-carousel-prev=""><i class="fa fa-arrow-left"></i> Previous
+                                    </button>
+                                    <button type="submit" class="btn btn-primary pull-right">
+                                        Finish</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators fade">
+                        <li data-target="#setupCarousel" class="hidden active"></li>
+                        <li data-target="#setupCarousel"></li>
+                        <li data-target="#setupCarousel"></li>
+                        <li data-target="#setupCarousel"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop in"></div>
+</template>
