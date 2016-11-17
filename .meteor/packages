@@ -49,12 +49,4 @@ fortawesome:fontawesome
 http
 gwendall:accounts-helpers
 matb33:collection-hooks
-easy:search
-flawless:meteor-toastr
-reywood:iron-router-ga
-gadicohen:sitemaps
-udondan:slick
-meteorhacks:fast-render
-mizzao:user-status
-kurounin:pagination
-kurounin:pagination-blaze
+
