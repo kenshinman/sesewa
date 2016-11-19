@@ -19,7 +19,7 @@ Template.signUpForm.events({
         if(userData.first_name !="" && userData.last_name !="" && userData.email !="" && userData.username !="" && userData.phone !="" && userData.password !="" && userData.password1 !="" && userData.password == userData.password1)
         {
         console.log(userData);
-        return false;
+        //return false;
         Accounts.createUser({
             email: userData.email,
             password: userData.password,
@@ -69,7 +69,7 @@ Template.signUpForm.events({
                 console.log(err)
             }else{
                 toastr.success("Your registration was successful, You are now logged in.");
-                Router.go('/dashboard');
+                Router.go('/employee');
             }
         })
         }else{
