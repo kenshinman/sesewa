@@ -52,3 +52,6 @@ matb33:collection-hooks
 twbs:bootstrap
 
 flawless:meteor-toastr
+dbarrett:dropzonejs
+natestrauser:select2
+#dburles:google-maps

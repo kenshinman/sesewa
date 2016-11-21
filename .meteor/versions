@@ -46,6 +46,7 @@ cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.2.3
 coffeescript@1.1.4
+dbarrett:dropzonejs@4.2.1
 dburles:mongo-collection-instances@0.3.4
 ddp@1.2.5
 ddp-client@1.2.9
@@ -116,6 +117,7 @@ mongo-id@1.0.5
 mongo-livedata@1.0.12
 mrt:flash-messages@1.0.1
 mrt:underscore-string-latest@2.3.3
+natestrauser:select2@4.0.3
 npm-bcrypt@0.8.6_3
 npm-mongo@1.4.45
 oauth@1.1.11

@@ -93,20 +93,9 @@
         Setup.showHide('#nyscServiceWrap', $(this).val() === '0')
     });
 
-    $('.preferences-btns .btn')
-        .append('<i class="fa fa-plus"></i>')
-        .on('click', function(){
-            var $this = $(this),
-                i = $this.find('.fa').removeClass('fa-plus fa-check');
-            if ($this.hasClass('active')) {
-                i.addClass('fa-plus');
-            }
-            else {
-                i.addClass('fa-check');
-            }
-        });
 
-    $('[data-activate-select2]').select2();
+
+    //$('[data-activate-select2]').select2();
 
     $('#city').cityAutocomplete();
     $('#city2').cityAutocomplete();
