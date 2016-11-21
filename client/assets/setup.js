@@ -89,7 +89,7 @@
     Setup.startDropzone();
 
     //NYSC show/hide
-    $('[name="nysc"]').on('change', function() {
+    /*$('[name="nysc"]').on('change', function() {
         Setup.showHide('#nyscServiceWrap', $(this).val() === '0')
     });
 
@@ -98,5 +98,5 @@
     //$('[data-activate-select2]').select2();
 
     $('#city').cityAutocomplete();
-    $('#city2').cityAutocomplete();
+    $('#city2').cityAutocomplete();*/
 })(jQuery);

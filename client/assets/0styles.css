@@ -6,6 +6,8 @@
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+
+
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -10861,10 +10863,31 @@ a.profile-sidebar-card-footer:hover {
     color: #808080
 }
 
-.select2.select2-container.select2-container--default{
+span.select2:nth-child(4){
     display: none;
 }
 
 .select2.select2-container.select2-container--default.select2-container--below{
     display: block;
+}
+
+
+#dropzone{
+    border: 1px dashed #aaa;
+    height: 250px;
+    background-color: #eee;
+    font-size: 22px;
+    color: #999;
+    text-align: center;
+    padding-top: 10%;
+}
+
+#dropzone h1{
+    font-size: 64px;
+    color:#999;
+}
+
+#dropzone h3{
+    font-size: 18px;
+    color:#999;
 }

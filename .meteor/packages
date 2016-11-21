@@ -54,4 +54,7 @@ twbs:bootstrap
 flawless:meteor-toastr
 dbarrett:dropzonejs
 natestrauser:select2
+tomi:upload-server
 #dburles:google-maps
+rajit:bootstrap3-datepicker
+raix:ui-dropped-event

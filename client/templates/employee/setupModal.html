@@ -5,14 +5,7 @@
             <div class="modal-content">
                 <form id="set-up-form">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <!-- Indicators -->
-                        <!--<ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>-->
 
-                        <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 <div class="setup-header-bg"></div>
@@ -35,18 +28,21 @@
                                     <h4 class="modal-title"><i class="fa fa-user"></i> Profile Information</h4>
                                 </div>
                                 <div class="modal-body">
-
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
                                                 <label>Profile Picture</label>
-                                                <div id="profilePictureWrap" class="dropzone dz-clickable">
+                                                <!--<div id="profilePictureWrap" class="dropzone dz-clickable">
                                                     <div class="dz-message">
                                                         <span class="dz-message-default">Drag a photo here</span>
                                                         <span class="dz-message-hover">Drop photo</span>
                                                         <span class="note">or click to select one</span>
                                                     </div>
-                                                </div>
+                                                </div>-->
+<!--                                                {{> dropzone url='http://localhost:3000/upload' maxFiles=1}}-->
+                                               {{> dropzoneMi }}
+                                               <img src="" alt="">
+                                               <input type="hidden" name="image_url" value="" id="image-url">
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
@@ -54,17 +50,17 @@
                                                 <label>Gender</label>
                                                 <select name="gender" class="form-control">
                                                     <option value="">Please select</option>
-                                                    <option value="F">Female</option>
-                                                    <option value="M">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Male">Male</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input type="date" class="form-control">
+                                                <input type="text" class="form-control" name="date_of_birth" id="my-datepicker">
                                             </div>
                                             <div class="form-group">
                                                 <label>IM <span class="desc">(Skype or Google Hangouts)</span></label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="im">
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +69,7 @@
                                         <div class="col-xs-12 col-sm-6 form-group">
                                             <label>Current City</label>
                                             <div class="pos-r">
-                                                <input id="city" type="text" class="form-control">
+                                                <input id="city" type="text" class="form-control" name="current_city" placeholder="e.g. lagos, Nigeria">
                                                 <div class="city-autocomplete" style="width: 100%; left: 0px; top: 34px;"></div>
                                             </div>
                                         </div>
@@ -83,7 +79,7 @@
                                                 <a class="popover-trigger fa fa-question-circle-o" tabindex="-1" role="button" data-toggle="popover" data-trigger="focus" data-title="Second City" data-content="If you study in one city (say Lagos) but are from a different city (say Port Harcourt), fill this to be considered for internships in both" data-original-title="" title=""></a>
                                             </label>
                                             <div class="pos-r">
-                                                <input id="city2" type="text" class="form-control">
+                                                <input id="city2" type="text" class="form-control" name="current_city2">
                                                 <div class="city-autocomplete" style="width: 100%; left: 0px; top: 34px;"></div>
                                             </div>
                                         </div>
@@ -108,13 +104,13 @@
                                         <br>
                                         <div class="btn-group" data-toggle="buttons">
                                             <label class="btn btn-default" data-toggle="tab" data-target="#preUni">
-                                                <input type="radio" name="education_level" autocomplete="off"> Pre-University
+                                                <input type="radio" name="education_level" autocomplete="off" value="Pre-University"> Pre-University
                                             </label>
                                             <label class="btn btn-default active" data-toggle="tab" data-target="#undergrad">
-                                                <input type="radio" name="education_level" autocomplete="off" checked=""> Undergraduate
+                                                <input type="radio" name="education_level" autocomplete="off" value="Undergraduate"> Undergraduate
                                             </label>
                                             <label class="btn btn-default" data-toggle="tab" data-target="#grad">
-                                                <input type="radio" name="education_level" autocomplete="off"> Graduate
+                                                <input type="radio" name="education_level" autocomplete="off" value="Graduate"> Graduate
                                             </label>
                                         </div>
                                     </div>
@@ -123,18 +119,18 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-8 form-group">
                                                     <label>School</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="preuni_school">
                                                 </div>
                                                 <div class="col-xs-12 col-sm-4 form-group">
                                                     <label>Current year</label>
-                                                    <select class="form-control">
-                                                        <option>JSS 1</option>
-                                                        <option>JSS 2</option>
-                                                        <option>JSS 3</option>
-                                                        <option>SSS 1</option>
-                                                        <option>SSS 2</option>
-                                                        <option>SSS 3</option>
-                                                        <option>Completed Secondary School</option>
+                                                    <select class="form-control" name="preuni_current_year">
+                                                        <option value="jss1">JSS 1</option>
+                                                        <option value="jss2">JSS 2</option>
+                                                        <option value="jss3">JSS 3</option>
+                                                        <option value="sss1">SSS 1</option>
+                                                        <option value="sss2">SSS 2</option>
+                                                        <option value="sss3">SSS 3</option>
+                                                        <option value="Completed Secondary School">Completed Secondary School</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -144,38 +140,38 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-8 form-group">
                                                     <label>Institution</label>
-                                                    <select class="form-control">
-                                                        <option>Please select an institution</option>
+                                                    <select class="form-control" name="underg_institution">
+                                                        <option value="University of lagos">University of lagos</option>
+                                                        <option value="University of lagos">University of lagos</option>
+                                                        <option value="University of lagos">University of lagos</option>
+                                                        <option value="University of lagos">University of lagos</option>
+
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-4 form-group">
                                                     <label>Current year</label>
-                                                    <select class="form-control">
-                                                        <option>100 Level</option>
-                                                        <option>200 Level</option>
-                                                        <option>300 Level</option>
-                                                        <option>400 Level</option>
-                                                        <option>500 Level</option>
-                                                        <option>600 Level</option>
+                                                    <select class="form-control" name="underg_current_year">
+                                                        <option value="100">100 Level</option>
+                                                        <option value="200">200 Level</option>
+                                                        <option value="300">300 Level</option>
+                                                        <option value="400">400 Level</option>
+                                                        <option value="500">500 Level</option>
+                                                        <option value="600">600 Level</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                                                     <label>Expected Grad<span class="hidden-xs">uation</span><span class="visible-xs-inline">.</span> year</label>
-                                                    <select class="form-control">
-                                                        <option>2016</option>
-                                                        <option>2017</option>
-                                                        <option>2018</option>
-                                                        <option>2019</option>
-                                                        <option>2020</option>
-                                                        <option>2021</option>
-                                                        <option>2022</option>
+                                                    <select class="form-control" name="expected_graduation_year">
+                                                       {{#each fromThisYear}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                                                     <label>CGPA</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="number" class="form-control" name="cgpa">
                                                 </div>
                                             </div>
 
@@ -183,16 +179,21 @@
                                         <div class="tab-pane" id="grad">
                                             <div class="form-group">
                                                 <label>Institution</label>
-                                                <select class="form-control"></select>
+                                                <select class="form-control" name="grad_institution"></select>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-6 form-group">
                                                     <label>Graduating GPA</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="grad_cgpa">
                                                 </div>
                                                 <div class="col-xs-12 col-sm-6 form-group">
                                                     <label>Graduating Class</label>
-                                                    <select class="form-control"></select>
+                                                    <select class="form-control" name="graduating_class">
+<!--                                                       <option>This valk</option>-->
+                                                        {{#each beforeThisYear}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -200,19 +201,19 @@
                                                     <label>I am...</label>
                                                     <div>
                                                         <label class="radio radio-inline">
-                                                            <input type="radio" name="nysc" value="0" checked=""> Awaiting NYSC
+                                                            <input type="radio" name="nysc" checked="" value="Awaiting NYSC"> Awaiting NYSC
                                                         </label>
                                                         <label class="radio radio-inline">
-                                                            <input type="radio" name="nysc" value="1"> Currently serving
+                                                            <input type="radio" name="nysc" value="Currently serving"> Currently serving
                                                         </label>
                                                         <label class="radio radio-inline">
-                                                            <input type="radio" name="nysc" value="2"> Done with NYSC
+                                                            <input type="radio" name="nysc" value="Done with NYSC"> Done with NYSC
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div id="nyscServiceWrap" class="col-xs-12 col-sm-6 form-group">
                                                     <label for="">Expected month of service</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="expected_month_of_service">
                                                 </div>
                                             </div>
                                         </div>
@@ -238,22 +239,22 @@
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
                                                 <label>Preferred Industries</label>
-                                                <select class="form-control select2-hidden-accessible" multiple="" data-activate-select2="" tabindex="-1" aria-hidden="true">
-                                                    <option>Engineering</option>
-                                                    <option>Science</option>
-                                                    <option>Humanities</option>
-                                                    <option>Media</option>
-                                                    <option>Law</option>
+                                                <select class="form-control select2-hidden-accessible" multiple="" data-activate-select2="" tabindex="-1" aria-hidden="true" name="preferences">
+                                                    <option value="Engineering">Engineering</option>
+                                                    <option value="Science">Science</option>
+                                                    <option value="Humanities">Humanities</option>
+                                                    <option value="Media">Media</option>
+                                                    <option value="Law">Law</option>
                                                 </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                             </div>
                                             <div class="form-group">
                                                 <label>Work type</label>
                                                 <div data-toggle="buttons" class="preferences-btns">
                                                     <label class="btn btn-default btn-block">
-                                                        <input type="checkbox"> Work from home
+                                                        <input type="checkbox" value="Work from home"> Work from home
                                                         <i class="fa fa-plus"></i></label>
                                                     <label class="btn btn-default btn-block">
-                                                        <input type="checkbox"> Office work
+                                                        <input type="checkbox" value="Office work"> Office work
                                                         <i class="fa fa-plus"></i></label>
                                                 </div>
                                             </div>
@@ -263,19 +264,19 @@
                                             <label>I'm looking for</label>
                                             <div data-toggle="buttons" class="preferences-btns">
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off"> Internships
+                                                    <input type="checkbox" autocomplete="off" value="Internships" class="looking_for"> Internships
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off"> Apprenticeship
+                                                    <input type="checkbox" autocomplete="off" value="Apprenticeship" class="looking_for"> Apprenticeship
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off"> Job Shadowing
+                                                    <input type="checkbox" autocomplete="off" value="Job Shadowing" class="looking_for"> Job Shadowing
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off"> Volunteering
+                                                    <input type="checkbox" autocomplete="off" value="Volunteering" class="looking_for"> Volunteering
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off"> Training
+                                                    <input type="checkbox" autocomplete="off" value="Training" class="looking_for"> Training
                                                     <i class="fa fa-plus"></i></label>
                                             </div>
                                         </div>
