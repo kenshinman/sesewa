@@ -41,7 +41,11 @@
                                                 </div>-->
 <!--                                                {{> dropzone url='http://localhost:3000/upload' maxFiles=1}}-->
                                                {{> dropzoneMi }}
-                                               <img src="" alt="">
+                                               <h1 class="text-center" id="spinner">
+                                                   {{> spinner}}
+                                               </h1>
+                                               <img src="" alt="" id="uploaded-image" width="200" height="200">
+
                                                <input type="hidden" name="image_url" value="" id="image-url">
                                             </div>
                                         </div>
@@ -103,14 +107,14 @@
                                         <label>Level of Education</label>
                                         <br>
                                         <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-default" data-toggle="tab" data-target="#preUni">
-                                                <input type="radio" name="education_level" autocomplete="off" value="Pre-University"> Pre-University
+                                            <label class="btn btn-default" data-toggle="tab" data-target="#preUni" >
+                                                <input type="radio" name="education_level" autocomplete="off" value="Pre-University" class="education-level"> Pre-University
                                             </label>
-                                            <label class="btn btn-default active" data-toggle="tab" data-target="#undergrad">
-                                                <input type="radio" name="education_level" autocomplete="off" value="Undergraduate"> Undergraduate
+                                            <label class="btn btn-default active" data-toggle="tab" data-target="#undergrad" >
+                                                <input type="radio" name="education_level" autocomplete="off" value="Undergraduate" class="education-level" checked> Undergraduate
                                             </label>
-                                            <label class="btn btn-default" data-toggle="tab" data-target="#grad">
-                                                <input type="radio" name="education_level" autocomplete="off" value="Graduate"> Graduate
+                                            <label class="btn btn-default" data-toggle="tab" data-target="#grad" >
+                                                <input type="radio" name="education_level" autocomplete="off" value="Graduate" class="education-level"> Graduate
                                             </label>
                                         </div>
                                     </div>
@@ -164,14 +168,14 @@
                                                 <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                                                     <label>Expected Grad<span class="hidden-xs">uation</span><span class="visible-xs-inline">.</span> year</label>
                                                     <select class="form-control" name="expected_graduation_year">
-                                                       {{#each fromThisYear}}
-                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{#each fromThisYear}}
+                                                            <option value="{{this}}">{{this}}</option>
                                                         {{/each}}
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-6 col-sm-6 col-md-4 form-group">
                                                     <label>CGPA</label>
-                                                    <input type="number" class="form-control" name="cgpa">
+                                                    <input type="number" class="form-control" name="cgpa" step="0.01">
                                                 </div>
                                             </div>
 
@@ -184,7 +188,7 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-6 form-group">
                                                     <label>Graduating GPA</label>
-                                                    <input type="text" class="form-control" name="grad_cgpa">
+                                                    <input type="numner" class="form-control" name="graduating_cgpa" step="0.01">
                                                 </div>
                                                 <div class="col-xs-12 col-sm-6 form-group">
                                                     <label>Graduating Class</label>
@@ -239,7 +243,7 @@
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
                                                 <label>Preferred Industries</label>
-                                                <select class="form-control select2-hidden-accessible" multiple="" data-activate-select2="" tabindex="-1" aria-hidden="true" name="preferences">
+                                                <select class="form-control select2-hidden-accessible" multiple data-activate-select2="" tabindex="-1" aria-hidden="true" name="pref_industries" id="pref_industries">
                                                     <option value="Engineering">Engineering</option>
                                                     <option value="Science">Science</option>
                                                     <option value="Humanities">Humanities</option>
@@ -251,10 +255,10 @@
                                                 <label>Work type</label>
                                                 <div data-toggle="buttons" class="preferences-btns">
                                                     <label class="btn btn-default btn-block">
-                                                        <input type="checkbox" value="Work from home"> Work from home
+                                                        <input type="checkbox" value="Work from home" class="work-type"> Work from home
                                                         <i class="fa fa-plus"></i></label>
                                                     <label class="btn btn-default btn-block">
-                                                        <input type="checkbox" value="Office work"> Office work
+                                                        <input type="checkbox" value="Office work" class="work-type"> Office work
                                                         <i class="fa fa-plus"></i></label>
                                                 </div>
                                             </div>
@@ -264,19 +268,19 @@
                                             <label>I'm looking for</label>
                                             <div data-toggle="buttons" class="preferences-btns">
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off" value="Internships" class="looking_for"> Internships
+                                                    <input type="checkbox" autocomplete="off" value="Internships" class="looking-for"> Internships
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off" value="Apprenticeship" class="looking_for"> Apprenticeship
+                                                    <input type="checkbox" autocomplete="off" value="Apprenticeship" class="looking-for"> Apprenticeship
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off" value="Job Shadowing" class="looking_for"> Job Shadowing
+                                                    <input type="checkbox" autocomplete="off" value="Job Shadowing" class="looking-for"> Job Shadowing
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off" value="Volunteering" class="looking_for"> Volunteering
+                                                    <input type="checkbox" autocomplete="off" value="Volunteering" class="looking-for"> Volunteering
                                                     <i class="fa fa-plus"></i></label>
                                                 <label class="btn btn-default btn-block">
-                                                    <input type="checkbox" autocomplete="off" value="Training" class="looking_for"> Training
+                                                    <input type="checkbox" autocomplete="off" value="Training" class="looking-for"> Training
                                                     <i class="fa fa-plus"></i></label>
                                             </div>
                                         </div>

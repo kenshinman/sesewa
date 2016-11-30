@@ -1,10 +1,12 @@
 <template name="home">
-    <div class="jumbotron cta">
-        <div class="container">
-            <h1 class="cta-title">Launch your career with <strong>Sesewa</strong></h1>
-            <div class="row cta-search-form-wrap">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                   {{> searchForm}}
+    <div class="cta-wrap">
+        <div class="jumbotron cta">
+            <div class="container">
+                <h1 class="cta-title">Launch your career with <strong>Sesewa</strong></h1>
+                <div class="row cta-search-form-wrap">
+                    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        {{> searchForm}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -13,9 +15,7 @@
     <div class="home-section-collage-wrap">
         <div class="home-section home-section-collage home-section-opportunities">
             <div class="container">
-                <h3 class="home-section-title">Featured Opportunities</h3>
-
-                {{> homeOpportunities}}
+                <h3 class="home-section-title">Featured Opportunities</h3> {{> homeOpportunities}}
 
                 <div>
                     <button type="button" class="btn btn-primary btn-lg multi-level-button" data-toggle="modal" data-target="#signupModal">
@@ -29,27 +29,28 @@
 
     </div>
 
-<!--    partner logos-->
+    <!--    partner logos-->
     <div class="home-section home-section-blue-bg home-section-partners">
         <div class="container">
             {{> homePartners}}
         </div>
     </div>
 
-<!--blog-->
+    <!--blog-->
 
     {{> homeBlog}}
 
-<!--testimonials-->
+    <!--testimonials-->
     {{> homeTestimonials}}
 </template>
 
 
 <template name="searchForm">
-    <form class="row" id="search-form">
+    <form class="row opportunity-form" action="/opportunities/" method="post">
         <div class="col-xs-12 col-sm-4 form-group">
-            <label for="cta-s-form-job-type">Choose a job type</label>
-            <select id="cta-s-form-job-type" class="form-control">
+            <label for="opportunity-form-job-type" class="sr-only">Choose a job type</label>
+            <select id="opportunity-form-job-type" class="form-control" data-nice-select>
+                <option value="">Choose a Job Type</option>
                 <option>Internship</option>
                 <option>Job Shadowing</option>
                 <option>Volunteering</option>
@@ -57,15 +58,15 @@
             </select>
         </div>
         <div class="col-xs-12 col-sm-5 form-group">
-            <label for="cta-s-form-job-type">Choose a specialization</label>
-            <select id="cta-s-form-job-type" class="form-control">
+            <label for="opportunity-form-job-type" class="sr-only">Choose a specialization</label>
+            <select id="opportunity-form-job-type" class="form-control" data-nice-select>
+                <option value="">Choose a Specialization</option>
                 <option>Engineering</option>
                 <option>Finance</option>
             </select>
         </div>
         <div class="col-xs-12 col-sm-3 form-group">
-            <label class="hidden-xs">&nbsp;</label>
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-block text-uppercase">
                 <i class="fa fa-search"></i> Search
             </button>
         </div>
@@ -90,11 +91,69 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-1" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <div class="modal fade" id="opportunityModal-1" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email" width="48">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End opportunity modal-->
         </div>
+        <!--End single opportunity-->
+
+        <!--Start new opportunity-->
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="opportunity opportunity--box">
                 <div class="opportunity-image">
@@ -109,11 +168,69 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-2" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <!--this opportunity modal-->
+            <div class="modal fade" id="opportunityModal-2" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016 - second</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end opportunity modal-->
         </div>
+        <!--End opportunity-->
+
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="opportunity opportunity--box">
                 <div class="opportunity-image">
@@ -128,11 +245,67 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-3" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <div class="modal fade" id="opportunityModal-3" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016 - third</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end opportunity modal-->
         </div>
+        <!--End of opportunity-->
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="opportunity opportunity--box">
                 <div class="opportunity-image">
@@ -147,11 +320,69 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-4" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <div class="modal fade" id="opportunityModal-4" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016 - fourth</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End opportunity modal-->
         </div>
+        <!--End single opportunity-->
+
+        <!--Start new opportunity-->
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="opportunity opportunity--box">
                 <div class="opportunity-image">
@@ -166,11 +397,69 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-5" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <!--this opportunity modal-->
+            <div class="modal fade" id="opportunityModal-5" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016 - fifth</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end opportunity modal-->
         </div>
+        <!--End opportunity-->
+
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="opportunity opportunity--box">
                 <div class="opportunity-image">
@@ -185,66 +474,72 @@
                     <span class="label label-default">Volunteering</span>
                 </div>
                 <div class="opportunity-footer">
-                    <a data-target="#opportunityModal" data-toggle="modal">View Description</a>
+                    <a data-target="#opportunityModal-6" data-toggle="modal">View Description</a>
                     <a href="#" class="primary-link">Apply</a>
                 </div>
             </div>
+            <div class="modal fade" id="opportunityModal-6" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
+                        2016 - sixth</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article-share">
+                                <div class="article-share-label hide">Recommend this: </div>
+                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
+                                    <img src="/assets/facebook.png" alt="Facebook">
+                                </a>
+                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
+                                    <img src="/assets/twitter.png" alt="Twitter">
+                                </a>
+                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
+                                    <img src="/assets/google+.png" alt="Google+">
+                                </a>
+                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
+                                    <img src="/assets/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
+                                    <img src="/assets/email.png" alt="Email">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
+                            </p>
+                            <br>
+                            <div>
+                                <h4 class="heading-with-underline">Requirements</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
+                                </p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end opportunity modal-->
         </div>
+        <!--End of opportunity-->
+
+
 
     </div>
 
-</template>
-
-<template name="homeBlog">
-    <div class="home-section home-section-blog home-section-border-bottom">
-        <div class="container">
-            <h3 class="home-section-title">Academy Blog</h3>
-            <div class="home-section-blog-articles-wrap">
-                <div class="row">
-                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="/assets/photo.png">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
-                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="/assets/photo.png">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
-                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col xs-12 col-sm-6 col-md-4 home-section-blog-article">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="/assets/photo.png">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">One Piece of Career Advice That Will Always Be True</h4> During your job or internship hunt, you will likely be exposed to hundreds of pieces of career advice...
-                                <a href="#">Read more <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 </template>
 
 
@@ -303,25 +598,24 @@
 
 <template name="homePartners">
     <h3 class="home-section-title">Partners</h3>
-            <div class="row">
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="box"></div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="box"></div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="box"></div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="box"></div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-0">
-                    <div class="box"></div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-md-2">
-                    <div class="box"></div>
-                </div>
-            </div>
-></template>
-
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-0">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+    </div>
+    ></template>

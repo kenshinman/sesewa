@@ -76,6 +76,9 @@
 
 
 <template name="modals">
+   {{#if currentUser}}
+
+   {{else}}
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -123,60 +126,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="opportunityModal" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="opportunityModalLabel">Volunteers needed for the Lagos Fashion Week
-                        2016</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="article-share">
-                        <div class="article-share-label hide">Recommend this: </div>
-                        <a href="http://sesewa.herokuapp.com/#" title="Share this opportunity on Facebook" class="article-share-item">
-                            <img src="./Sesewa_files/facebook.png" alt="Facebook">
-                        </a>
-                        <a href="http://sesewa.herokuapp.com/#" title="Share this opportunity on Twitter" class="article-share-item">
-                            <img src="./Sesewa_files/twitter.png" alt="Twitter">
-                        </a>
-                        <a href="http://sesewa.herokuapp.com/#" title="Share this opportunity on Google+" class="article-share-item">
-                            <img src="./Sesewa_files/google+.png" alt="Google+">
-                        </a>
-                        <a href="http://sesewa.herokuapp.com/#" title="Share this opportunity on LinkedIn" class="article-share-item">
-                            <img src="./Sesewa_files/linkedin.png" alt="LinkedIn">
-                        </a>
-                        <a href="http://sesewa.herokuapp.com/#" title="Share this opportunity via Email" class="article-share-item">
-                            <img src="./Sesewa_files/email.png" alt="Email">
-                        </a>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem cumque dolorem doloribus esse facilis magnam mollitia, non numquam, omnis placeat porro quaerat recusandae, repudiandae soluta suscipit ut voluptatem.
-                    </p>
-                    <br>
-                    <div>
-                        <h4 class="heading-with-underline">Requirements</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur dolores doloribus ducimus eius eligendi eos expedita fuga ipsa iusto maiores nemo, nesciunt pariatur quod tempore unde vitae voluptatibus.
-                        </p>
-                    </div>
-                    <br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{/if}}
     <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=places"></script>
     <!--
     <script type="text/javascript" src="/assets/dropzone.min.js"></script>

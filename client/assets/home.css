@@ -48,14 +48,120 @@
     }
 }
 
+@media screen and (min-width:768px) {
+    .opportunity-form {
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25)
+    }
+}
+
+.opportunity-form.row,
+.opportunity-form .row {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.opportunity-form.row>*,
+.opportunity-form .row>* {
+    padding-left: 0;
+    padding-right: 0
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form.row>*,
+    .opportunity-form .row>* {
+        margin-bottom: 0
+    }
+}
+
+.opportunity-form label {
+    margin: 0
+}
+
+.opportunity-form .form-control,
+.opportunity-form .btn {
+    padding: 0 16px;
+    height: 46px;
+    font-size: 17px;
+    line-height: 44px;
+    border-radius: 4px
+}
+
+@media screen and (min-width:992px) {
+    .opportunity-form .form-control,
+    .opportunity-form .btn {
+        font-size: 18px
+    }
+}
+
+.opportunity-form .form-control {
+    box-shadow: none
+}
+
+.opportunity-form .form-control.open,
+.opportunity-form .form-control:focus {
+    border-color: #F07712
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .form-control {
+        border-color: transparent;
+        border-radius: 0
+    }
+}
+
+.opportunity-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .form-group:first-child .form-control {
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        border-right-color: #ddd
+    }
+    .opportunity-form .form-group:first-child .form-control.open,
+    .opportunity-form .form-group:first-child .form-control:focus {
+        border-right-color: #F07712
+    }
+}
+
+.opportunity-form .btn {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+}
+
+.opportunity-form .btn .fa {
+    position: relative;
+    top: -1px;
+    margin-right: 5px
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .btn {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0
+    }
+}
+
+.cta-wrap {
+    background: #333 url('/assets/intern-cta.jpg') no-repeat center 55% fixed;
+    background-size: cover;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.5)
+}
+
 .cta {
     margin: 0;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     color: #333;
-    background: #333 url('assets/intern-cta.jpg') no-repeat;
-    background-size: cover;
-    background-position: center 100%;
-    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.5)
+    background: rgba(7, 58, 100, 0.1)
+}
+
+@media screen and (min-width:768px) {
+    .cta {
+        padding-bottom: 80px
+    }
 }
 
 @media screen and (min-width:992px) {
@@ -65,49 +171,87 @@
     }
 }
 
+@media screen and (min-width:1200px) {
+    .cta {
+        padding-top: 100px;
+        padding-bottom: 135px
+    }
+}
+
 .cta-title {
-    font-size: 44px;
+    font-size: 48px;
     font-weight: 400;
     color: #fff !important;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75)
 }
 
+@media screen and (min-width:768px) {
+    .jumbotron h1.cta-title {
+        font-size: 52px
+    }
+}
+
+@media screen and (min-width:992px) {
+    .jumbotron h1.cta-title {
+        font-size: 55px
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .jumbotron h1.cta-title {
+        font-size: 58px
+    }
+}
+
 .cta-search-form-wrap {
-    margin-top: 80px
+    margin-top: 60px
 }
 
-.cta-search-form-wrap .row {
-    margin-left: -5px;
-    margin-right: -5px
+@media screen and (min-width:768px) {
+    .cta-search-form-wrap {
+        margin-top: 70px
+    }
 }
 
-.cta-search-form-wrap .form-group {
-    padding-left: 5px;
-    padding-right: 5px
+@media screen and (min-width:1200px) {
+    .cta-search-form-wrap {
+        margin-top: 80px
+    }
 }
 
-.cta-search-form-wrap label {
-    margin: 0;
+@media screen and (min-width:768px) {
+    .cta-search-form-wrap .opportunity-form {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4)
+    }
+}
+
+.cta-search-form-wrap .opportunity-form label {
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65)
 }
 
-.cta-search-form-wrap .form-control,
-.cta-search-form-wrap .btn {
-    padding: 10px 16px;
-    height: 44px;
-    font-size: 17px;
-    line-height: 24px
+.cta-search-form-wrap .opportunity-form .form-control {
+    border-color: transparent
+}
+
+.cta-search-form-wrap .opportunity-form .form-control,
+.cta-search-form-wrap .opportunity-form .btn {
+    height: 50px;
+    line-height: 48px
+}
+
+.employer-jumbotron-wrap {
+    background: #073A64 url('/assets/employer-cta.jpg') no-repeat top left fixed;
+    background-size: cover;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.05)
 }
 
 .employer-jumbotron {
     margin: 0;
     padding-bottom: 0;
-    background: #073A64 url('../img/collage-grayscale.png') repeat;
-    background-position: -20px -20px;
     overflow: hidden;
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.05)
+    background: rgba(18, 57, 89, 0.25)
 }
 
 @media screen and (min-width:992px) {
@@ -175,9 +319,9 @@ h1.employer-cta-title {
     padding-left: 0;
     font-size: 22px;
     color: #fff;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     list-style-type: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35)
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45)
 }
 
 .employer-cta-text li {
@@ -238,7 +382,7 @@ h1.employer-cta-title {
 
 .employer-signup-title,
 .employer-signup-subtitle {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
 
 .employer-signup-title {
@@ -286,14 +430,13 @@ h1.employer-cta-title {
 
 .home-section-collage {
     background: rgba(255, 255, 255, 0.5);
-    background: -webkit-linear-gradient(top, #fff, #fff 20%, rgba(255, 255, 255, 0.5));
     background: linear-gradient(to bottom, #fff, #fff 20%, rgba(255, 255, 255, 0.5))
 }
 
 .home-section-blue-bg {
     color: #fff;
     color: rgba(255, 255, 255, 0.9);
-    background: #073A64 url('/assets/blue_footer_lodyas.png') repeat
+    background: #073A64 url('../img/blue_footer_lodyas.png') repeat
 }
 
 .home-section-blue-bg .home-section-title {

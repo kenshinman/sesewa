@@ -17,21 +17,50 @@
             <div class="collapse navbar-collapse navbar-collapse-dropdown" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#">About</a></li>
-                    <li><a href="#" class="navbar-label text-primary">Employers</a></li>
-                    <li class="dropdown">
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/employer" class="navbar-label text-primary">Employers</a></li>
+                    <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Academy <span class="fa fa-angle-down"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Classroom</a></li>
                             <li><a href="#">Blog</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                   {{#if currentUser}}
+                       <li class="dropdown">
+                            <a class="navbar-search-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-search"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-search">
+                                <form action="#" class="dropdown-search-form">
+                                    <input type="text" class="form-control input-lg" placeholder="Search Opportunities">
+                                    <button class="fa fa-search lg" type="submit"></button>
+                                </form>
+                            </div>
+                        </li>
+                        {{#with currentUser}}
+                        <li class="dropdown user-dropdown">
+                            <a href="#" class="user-dropdown-toggle dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img class="user-dropdown-image" src="{{profilePicture}}">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+
+                                <li><a href="/{{profile.user_type}}/dashboard">Profile</a></li>
+
+                                <li><a href="#" class="sign-out">Sign out</a></li>
+                            </ul>
+                        </li>
+                        {{/with}}
+                   {{else}}
                     <li><a data-toggle="modal" data-target="#signinModal">Sign In</a></li>
                     <li>
                         <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">Sign Up
                         </button>
                     </li>
+                    {{/if}}
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

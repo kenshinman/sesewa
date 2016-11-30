@@ -1,10 +1,11 @@
 <template name="employee">
+    {{#with currentUser}}
     <div class="container">
         <div class="row profile-wrap">
             <div class="col-xs-12 col-sm-8 profile-column">
                 <div class="profile-card">
                     <div class="profile-card-image">
-                        <img src="/assets/profile-female2.jpg">
+                        <img src="{{profilePicture}}">
                         <span class="placeholder-image placeholder-image-square hidden"></span>
                     </div>
                     <div class="profile-card-info">
@@ -13,56 +14,132 @@
                             <i class="placeholder-icon hidden"></i> <span class="placeholder-text hidden">Premium</span>
                         </div>
                         <h4 class="profile-card-user-name">
-                            Kemi Olayinka
+                           {{profile.fullname}}
                             <span class="placeholder-text hidden">Intern's full name goes here</span>
                         </h4>
                         <div class="profile-card-education-summary">
-                            Computer Science Undergraduate at University of Lagos
+                            {{#if isGraduate setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}} {{/if}} {{#if isUnderGraduate setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}} {{/if}} {{#if isPreUniversity setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.school}} {{/if}}
+                            <!--                           {{setUp.education_level}}-->
+
                             <span class="placeholder-text hidden">Some details about the intern's education here too!</span>
                         </div>
                         <div class="profile-card-line-wrap">
                             <div class="profile-card-label">Looking for:</div>
                             <div class="profile-card-value">
-                                <span class="label label-default">Internship</span>
-                                <span class="label label-success">Job shadowing</span>
-                                <span class="label label-primary">Apprenticeship</span>
-                                <span class="label label-info">Volunteering</span>
+                                {{#each setUp.preferences.looking_for}}
+                                <span class="label">{{this}}</span> {{/each}}
                             </div>
                         </div>
                         <div class="profile-card-line-wrap">
                             <div class="profile-card-label">Preferred industries:</div>
-                            <div class="profile-card-value">Technology, Health, Agriculture</div>
+                            <div class="profile-card-value">
+                                {{#each setUp.preferences.preferred_industries}}
+                                <span class="inline-each">{{this}}, </span> {{/each}}
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <ul class="nav profile-tabs">
                     <li class="active">
-                        <a href="http://sesewa.herokuapp.com/intern/profile.php#experience" data-toggle="tab">
+                        <a href="#experience" data-toggle="tab">
                             <i class="fa fa-briefcase"></i> Experience
                         </a>
                     </li>
                     <li>
-                        <a href="http://sesewa.herokuapp.com/intern/profile.php#academy" data-toggle="tab">
-                            <i class="fa fa-graduation-cap"></i> Learning
+                        <a href="#academy" data-toggle="tab"><i class="fa fa-file-text-o"></i>
+                            <span class="hidden-xs">My</span> Opportunities
                         </a>
                     </li>
                     <li>
-                        <a href="http://sesewa.herokuapp.com/intern/profile.php#inbox" data-toggle="tab">
-                            <i class="fa fa-inbox"></i> Inbox
+                        <a href="#inbox" data-toggle="tab">
+                            <i class="fa fa-inbox"></i> Inbox {{inbox.length}}
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content profile-tab-content">
                     <div role="tabpanel" class="tab-pane active" id="experience">
-                        Experience
+                        <div class="experience">
+                            <h3 class="experience-title">Product Design Intern</h3>
+                            <h5 class="experience-meta">Helwett Packard Nigeria, May 2015 &ndash; Dec 2015</h5>
+                            <div class="experience-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <h3 class="experience-title">Product Design Intern</h3>
+                            <h5 class="experience-meta">Helwett Packard Nigeria, May 2015 &ndash; Dec 2015</h5>
+                            <div class="experience-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                            </div>
+                        </div>
+                        <div class="experience">
+                            <h3 class="experience-title">Product Design Intern</h3>
+                            <h5 class="experience-meta">Helwett Packard Nigeria, May 2015 &ndash; Dec 2015</h5>
+                            <div class="experience-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                            </div>
+                        </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="academy">
-                        Learning
+                        <div class="opportunity opportunity--large">
+                            <div class="opportunity-image">
+                                <img src="/assets/photo1.png" alt="64x64">
+                            </div>
+                            <div class="opportunity-content">
+                                <div class="opportunity-activity-type
+                                        opportunity-activity-type--recommended">
+                                    recommended</div>
+                                <a href="/opportunities/view.php" class="opportunity-title">
+                                        Volunteers needed for the Lagos Fashion Week 2016</a>
+                                <div class="opportunity-meta">
+                                    <span class="opportunity-company">Style House Files</span> |
+                                    <span class="opportunity-location">Lagos NG</span> |
+                                    <span class="opportunity-created-date">Posted 2 days ago</span>
+                                </div>
+                                <span class="label label-default">Volunteering</span>
+                            </div>
+                        </div>
+                        <div class="opportunity opportunity--large">
+                            <div class="opportunity-image">
+                                <img src="/assets/photo1.png" alt="64x64">
+                            </div>
+                            <div class="opportunity-content">
+                                <div class="opportunity-activity-type
+                                        opportunity-activity-type--recommended">
+                                    recommended</div>
+                                <a href="/opportunities/view.php" class="opportunity-title">
+                                        Volunteers needed for the Lagos Fashion Week 2016</a>
+                                <div class="opportunity-meta">
+                                    <span class="opportunity-company">Style House Files</span> |
+                                    <span class="opportunity-location">Lagos NG</span> |
+                                    <span class="opportunity-created-date">Posted 2 days ago</span>
+                                </div>
+                                <span class="label label-default">Volunteering</span>
+                            </div>
+                        </div>
+                        <div class="opportunity opportunity--large">
+                            <div class="opportunity-image">
+                                <img src="/assets/photo1.png" alt="64x64">
+                            </div>
+                            <div class="opportunity-content">
+                                <div class="opportunity-activity-type
+                                        opportunity-activity-type--recommended">
+                                    recommended</div>
+                                <a href="/opportunities/view.php" class="opportunity-title">
+                                        Volunteers needed for the Lagos Fashion Week 2016</a>
+                                <div class="opportunity-meta">
+                                    <span class="opportunity-company">Style House Files</span> |
+                                    <span class="opportunity-location">Lagos NG</span> |
+                                    <span class="opportunity-created-date">Posted 2 days ago</span>
+                                </div>
+                                <span class="label label-default">Volunteering</span>
+                            </div>
+                        </div>
                     </div>
                     <div role="tabpanel" class="tab-pane inbox-tab-pane" id="inbox">
                         <div class="inbox-list">
-                            <a class="inbox-item" href="http://sesewa.herokuapp.com/intern/inbox.php">
+                            <a class="inbox-item" href="#">
                                 <div class="inbox-item-image">
                                     <img src="/assets/hp_logo.png">
                                 </div>
@@ -76,144 +153,102 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="inbox-item" href="http://sesewa.herokuapp.com/intern/inbox.php">
-                                <div class="inbox-item-image">
-                                    <img src="/assets/hp_logo.png">
-                                </div>
-                                <div class="inbox-item-content">
-                                    <div class="inbox-item-title">
-                                        <span class="inbox-item-username">HP Nigeria</span>
-                                        <span class="inbox-item-datetime">Yesterday</span>
-                                    </div>
-                                    <div class="inbox-item-message">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="inbox-item" href="http://sesewa.herokuapp.com/intern/inbox.php">
-                                <div class="inbox-item-image">
-                                    <img src="/assets/hp_logo.png">
-                                </div>
-                                <div class="inbox-item-content">
-                                    <div class="inbox-item-title">
-                                        <span class="inbox-item-username">HP Nigeria</span>
-                                        <span class="inbox-item-datetime">Tuesday</span>
-                                    </div>
-                                    <div class="inbox-item-message">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="inbox-item" href="http://sesewa.herokuapp.com/intern/inbox.php">
-                                <div class="inbox-item-image">
-                                    <img src="/assets/hp_logo.png">
-                                </div>
-                                <div class="inbox-item-content">
-                                    <div class="inbox-item-title">
-                                        <span class="inbox-item-username">HP Nigeria</span>
-                                        <span class="inbox-item-datetime">Apr 21</span>
-                                    </div>
-                                    <div class="inbox-item-message">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="inbox-item" href="http://sesewa.herokuapp.com/intern/inbox.php">
-                                <div class="inbox-item-image">
-                                    <img src="/assets/hp_logo.png">
-                                </div>
-                                <div class="inbox-item-content">
-                                    <div class="inbox-item-title">
-                                        <span class="inbox-item-username">HP Nigeria</span>
-                                        <span class="inbox-item-datetime">17/02/2015</span>
-                                    </div>
-                                    <div class="inbox-item-message">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
-                                    </div>
-                                </div>
-                            </a>
+
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-xs-12 col-sm-4 profile-sidebar">
-                <div class="profile-sidebar-card">
-                    <div class="profile-sidebar-card-title">OPPORTUNITIES</div>
-                    <div class="opportunity opportunity--sidebar">
-                        <div class="opportunity-image">
-                            <img src="/assets/photo1.png" alt="64x64">
-                        </div>
-                        <div class="opportunity-content">
-                            <a href="http://sesewa.herokuapp.com/opportunities/view.php" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
-                            <div>
-                                <span class="opportunity-company">Style House Files</span> |
-                                <span class="opportunity-location">Lagos NG</span>
-                            </div>
-                            <span class="label label-default">Volunteering</span>
-                        </div>
-                    </div>
-                    <div class="opportunity opportunity--sidebar">
-                        <div class="opportunity-image">
-                            <img src="/assets/photo1.png" alt="64x64">
-                        </div>
-                        <div class="opportunity-content">
-                            <a href="http://sesewa.herokuapp.com/opportunities/view.php" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
-                            <div>
-                                <span class="opportunity-company">Style House Files</span> |
-                                <span class="opportunity-location">Lagos NG</span>
-                            </div>
-                            <span class="label label-default">Volunteering</span>
-                        </div>
-                    </div>
-                    <a href="http://sesewa.herokuapp.com/opportunities/" class="profile-sidebar-card-footer">
+            {{> profileSidebar}}
+        </div>
+    </div>
+
+    {{#if isSetUp}}
+    <h3 class="text-center">You're set-up</h3> {{else}} {{> setupModal}} {{/if}} {{/with}}
+</template>
+
+
+<template name="profileSidebar">
+    <div class="col-xs-12 col-sm-4 profile-sidebar">
+        {{> profileOpportunities}} {{> profileFeaturedPosts}}
+    </div>
+</template>
+
+<template name="profileOpportunities">
+    <div class="profile-sidebar-card" id="opportunities">
+        <div class="profile-sidebar-card-title">OPPORTUNITIES</div>
+        <div class="opportunity opportunity--sidebar">
+            <div class="opportunity-image">
+                <img src="/assets/photo1.png" alt="64x64">
+            </div>
+            <div class="opportunity-content">
+                <a href="http://sesewa.herokuapp.com/opportunities/view.php" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
+                <div>
+                    <span class="opportunity-company">Style House Files</span> |
+                    <span class="opportunity-location">Lagos NG</span>
+                </div>
+                <span class="label label-default">Volunteering</span>
+            </div>
+        </div>
+        <div class="opportunity opportunity--sidebar">
+            <div class="opportunity-image">
+                <img src="/assets/photo1.png" alt="64x64">
+            </div>
+            <div class="opportunity-content">
+                <a href="http://sesewa.herokuapp.com/opportunities/view.php" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
+                <div>
+                    <span class="opportunity-company">Style House Files</span> |
+                    <span class="opportunity-location">Lagos NG</span>
+                </div>
+                <span class="label label-default">Volunteering</span>
+            </div>
+        </div>
+        <a href="http://sesewa.herokuapp.com/opportunities/" class="profile-sidebar-card-footer">
                         View more opportunities
                     </a>
+    </div>
+</template>
+
+<template name="profileFeaturedPosts">
+    <div class="profile-sidebar-card" id="featured-posts">
+        <div class="profile-sidebar-card-title">FEATURED POSTS</div>
+        <div class="media-list">
+            <div class="media">
+                <div class="media-left">
+                    <div class="media-featured media-featured-square-small">
+                        <a href="http://sesewa.herokuapp.com/blog/view.php">
+                            <img class="media-object" src="/assets/photo.png">
+                        </a>
+                    </div>
                 </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="http://sesewa.herokuapp.com/blog/view.php">One Piece of Career Advice That Will Always Be True</a></h4>
 
-                <div class="profile-sidebar-card">
-                    <div class="profile-sidebar-card-title">FEATURED POSTS</div>
-                    <div class="media-list">
-                        <div class="media">
-                            <div class="media-left">
-                                <div class="media-featured media-featured-square-small">
-                                    <a href="http://sesewa.herokuapp.com/blog/view.php">
-                                        <img class="media-object" src="/assets/photo.png">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="http://sesewa.herokuapp.com/blog/view.php">One Piece of Career Advice That Will Always Be True</a></h4>
-
-                                <div class="media-meta">
-                                    <div class="media-meta-item">
-                                        <i class="fa fa-clock-o"></i> May 23, 2016
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="media-meta">
+                        <div class="media-meta-item">
+                            <i class="fa fa-clock-o"></i> May 23, 2016
                         </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <div class="media-featured media-featured-square-small">
-                                    <a href="http://sesewa.herokuapp.com/blog/view.php">
-                                        <img class="media-object" src="/assets/photo.png">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="http://sesewa.herokuapp.com/blog/view.php">One Piece of Career Advice That Will Always Be True</a></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <div class="media-featured media-featured-square-small">
+                        <a href="http://sesewa.herokuapp.com/blog/view.php">
+                            <img class="media-object" src="/assets/photo.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="http://sesewa.herokuapp.com/blog/view.php">One Piece of Career Advice That Will Always Be True</a></h4>
 
-                                <div class="media-meta">
-                                    <div class="media-meta-item">
-                                        <i class="fa fa-clock-o"></i> May 23, 2016
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="media-meta">
+                        <div class="media-meta-item">
+                            <i class="fa fa-clock-o"></i> May 23, 2016
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-{{> setupModal}}
 </template>

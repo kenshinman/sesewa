@@ -1,0 +1,202 @@
+<template name="employer">
+    <div class="employer-jumbotron-wrap">
+        <div class="jumbotron employer-jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-7 employer-cta">
+                        <h1 class="employer-cta-title">Why more than 100 Employers trust SESEWA</h1>
+                        <ul class="employer-cta-text">
+                            <li>Well trained and tested interns that are ready to contribute from the very first day significantly saving you time, efforts and resources.</li>
+                            <li>Get unprecedented and unparalleled access to a rich pool of career-focused, proficient and employable undergraduates and fresh graduates.</li>
+                            <li>State of the art platform for a seamless hiring experience.</li>
+                            <li>Unequalled customer service. We do not leave you to technology, we guide our clients during the hiring process.</li>
+                            <li>Periodic evaluation of interns and employers to ensure both parties are having their expectations met.</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-0 employer-signup-wrap">
+                        <div class="employer-signup-box">
+                            <h3 class="employer-signup-title">Hire Interns</h3>
+                            <h5 class="employer-signup-subtitle">Create an account on Sesewa today.</h5>
+
+                           {{#if currentUser}}
+                           <h5>You have already registered. If you signed up as an employer, please go to your <a href="/dashboard"><u>dashboard</u></a> and create opportunities</h5>
+                           {{else}}
+                            {{> employerSignup}}
+                            {{/if}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="client-ticker-wrap">
+            <div class="bx-wrapper" style="max-width: 100%;">
+                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 110px;">
+                    <ul id="clientTicker" class="client-ticker" style="width: 19215%; position: relative; transition-duration: 65s; transform: translate3d(-4623px, 0px, 0px); transition-timing-function: linear;">
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/insidify.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/jobmag.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/linkbridge.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/pal-pensions.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/azimuth-shipping-lines-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/edge-edwards-company-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/powergen-engineering-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/dugo-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/greenswealth-corporate-services-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/kindell.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/business-impact-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/project-stretch.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/the-udemba-group.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/aspire.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/hcddc-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/thistlepraxis-consulting.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/obeezi.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/intermatics-software-services.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;"><img src="/img/revive-afrique.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/insidify.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/jobmag.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/linkbridge.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/pal-pensions.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/azimuth-shipping-lines-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/edge-edwards-company-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/powergen-engineering-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/dugo-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/greenswealth-corporate-services-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/kindell.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/business-impact-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/project-stretch.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/the-udemba-group.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/aspire.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/hcddc-limited.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/thistlepraxis-consulting.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/obeezi.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/intermatics-software-services.png"></li>
+                        <li style="float: left; list-style: none; position: relative; width: 1349px;" class="bx-clone"><img src="/img/revive-afrique.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-section home-section-features hide">
+            <div class="container">
+                <h3 class="home-section-title">Why <strong>Sesewa</strong> is right for you</h3>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 home-section-feature">
+                        <div class="home-section-feature-image"></div>
+                        <h4 class="home-section-feature-title">Feature 1</h4>
+                        <p class="home-section-feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque eveniet expedita fugit, harum laudantium.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 home-section-feature">
+                        <div class="home-section-feature-image"></div>
+                        <h4 class="home-section-feature-title">Feature 2</h4>
+                        <p class="home-section-feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque eveniet expedita fugit, harum laudantium.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 home-section-feature">
+                        <div class="home-section-feature-image"></div>
+                        <h4 class="home-section-feature-title">Feature 3</h4>
+                        <p class="home-section-feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque eveniet expedita fugit, harum laudantium.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-lg btn-primary hire-button" data-start-signup="">Hire Interns</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-section-collage-wrap">
+            <div class="home-section home-section-collage home-section-testimonials">
+                <div class="container">
+                    <h3 class="home-section-title">What Employers are saying about SESEWA</h3>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                            <div class="testimonial-message">
+                                <blockquote>
+                                    Sesewa helped us find the right intern! Our Sesewa intern is hardworking, intelligent and resourceful.
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-profile">
+                                <img src="/img/profile-male1.jpg" alt="" class="img-circle testimonial-profile-image">
+                                <div class="testimonial-profile-name">
+                                    Wale Adekunle
+                                    <small class="">Managing Director, GE Nigeria</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                            <div class="testimonial-message">
+                                <blockquote>
+                                    Sesewa helped us find the right intern! Our Sesewa intern is hardworking, intelligent and resourceful.
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-profile">
+                                <img src="/img/profile-male1.jpg" alt="" class="img-circle testimonial-profile-image">
+                                <div class="testimonial-profile-name">
+                                    Wale Adekunle
+                                    <small class="">Managing Director, GE Nigeria</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                            <div class="testimonial-message">
+                                <blockquote>
+                                    Sesewa helped us find the right intern! Our Sesewa intern is hardworking, intelligent and resourceful.
+                                </blockquote>
+                            </div>
+                            <div class="testimonial-profile">
+                                <img src="/img/profile-male1.jpg" alt="" class="img-circle testimonial-profile-image">
+                                <div class="testimonial-profile-name">
+                                    Wale Adekunle
+                                    <small class="">Managing Director, GE Nigeria</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-lg btn-primary hire-button" data-start-signup="">Hire Interns</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-section home-section-blue-bg home-section-works">
+            <div class="container">
+                <h3 class="home-section-title">How it works</h3>
+                <p class="home-section-works-text">How to hire interns through SESEWA:</p>
+
+                <div class="row hiw">
+                    <div class="col-xs-12 col-sm-6 hiw-item">
+                        <div class="hiw-item-image"><img src="/img/hiw-signup.png" alt="Sign Up"></div>
+                        <div class="hiw-item-content">
+                            <h5 class="hiw-item-title">Sign Up</h5> Create a unique company profile
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 hiw-item">
+                        <div class="hiw-item-image"><img src="/img/hiw-post2.png" alt="Post Internships"></div>
+                        <div class="hiw-item-content">
+                            <h5 class="hiw-item-title">Post Internships/Jobs</h5> Post a vacancy yourself, or have one of our dedicated customer service/account managers sort this out for you.
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 hiw-item">
+                        <div class="hiw-item-image"><img src="/img/hiw-screen.png" alt="Screen applicants"></div>
+                        <div class="hiw-item-content">
+                            <h5 class="hiw-item-title">Screen Applicants</h5> Easily set up interviews with your preferred candidates using your preferred method.
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 hiw-item">
+                        <div class="hiw-item-image"><img src="/img/hiw-hire.png" alt="Hire Interns"></div>
+                        <div class="hiw-item-content hiw-item-content-no-line">
+                            <h5 class="hiw-item-title">Hire Interns</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        {{> homeBlog}}
+</template>

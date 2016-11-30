@@ -6,8 +6,6 @@
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-
-
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -1386,7 +1384,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
@@ -1414,7 +1412,6 @@ a:focus {
 }
 
 a:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px
 }
@@ -1447,7 +1444,6 @@ img {
     background-color: #eee;
     border: 1px solid #ddd;
     border-radius: 3px;
-    -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     display: inline-block;
     max-width: 100%;
@@ -1502,7 +1498,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #333
@@ -3056,7 +3052,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px
 }
@@ -3082,7 +3077,6 @@ output {
     border: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
@@ -3681,7 +3675,6 @@ label {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px
 }
@@ -4686,7 +4679,6 @@ fieldset[disabled] .btn-secondary.focus {
 
 .fade {
     opacity: 0;
-    -webkit-transition: opacity .15s linear;
     transition: opacity .15s linear
 }
 
@@ -4714,11 +4706,8 @@ tbody.collapse.in {
     position: relative;
     height: 0;
     overflow: hidden;
-    -webkit-transition-property: height, visibility;
     transition-property: height, visibility;
-    -webkit-transition-duration: .35s;
     transition-duration: .35s;
-    -webkit-transition-timing-function: ease;
     transition-timing-function: ease
 }
 
@@ -6169,7 +6158,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .navbar-nav>li>a,
 .navbar-btn {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     text-transform: uppercase
 }
 
@@ -6324,7 +6313,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .navbar-blog .navbar-nav>li>a {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     text-transform: none
 }
 
@@ -6660,7 +6649,6 @@ a.badge:focus {
     background-color: #eee;
     border: 1px solid #ddd;
     border-radius: 3px;
-    -webkit-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out
 }
 
@@ -6812,13 +6800,11 @@ a.thumbnail.active {
     text-align: center;
     background-color: #F07712;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    -webkit-transition: width .6s ease;
     transition: width .6s ease
 }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-size: 40px 40px
 }
@@ -6834,7 +6820,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-success {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -6843,7 +6828,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-info {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -6852,7 +6836,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-warning {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -6861,7 +6844,6 @@ a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-danger {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -7703,12 +7685,12 @@ html.page-bg-collage body {
 }
 
 .l-fixed-page-info {
-    margin-left: 156px
+    margin-left: 140px
 }
 
 @media screen and (min-width:992px) {
     .l-fixed-page-info {
-        margin-left: 176px
+        margin-left: 160px
     }
 }
 
@@ -7731,7 +7713,7 @@ html.page-bg-collage body {
 
 .l-fixed-page-user-name {
     margin: 5px 0 10px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 32px;
     font-weight: normal;
     line-height: 1;
@@ -7758,7 +7740,7 @@ html.page-bg-collage body {
 }
 
 .l-fixed-page-line-wrap {
-    margin: 0 0 5px
+    margin: 0 0 16px
 }
 
 .l-fixed-page-line-wrap:before,
@@ -7767,17 +7749,27 @@ html.page-bg-collage body {
 }
 
 .l-fixed-page-label {
-    float: left;
-    width: 160px;
-    padding-right: 10px;
     font-size: 13px;
     font-style: italic;
     color: #808080
 }
 
 .l-fixed-page-value {
-    color: #666;
-    margin-left: 160px
+    color: #666
+}
+
+@media screen and (min-width:992px) {
+    .l-fixed-page-line-wrap {
+        margin-bottom: 8px
+    }
+    .l-fixed-page-label {
+        float: left;
+        width: 160px;
+        padding-right: 10px
+    }
+    .l-fixed-page-value {
+        margin-left: 160px
+    }
 }
 
 .row-thin {
@@ -7862,7 +7854,7 @@ html.page-bg-collage body {
 }
 
 .footer-nav-title {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 20px;
     color: #e7710f;
     letter-spacing: -1px
@@ -7881,7 +7873,7 @@ html.page-bg-collage body {
     height: 350px;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-    background-image: url('/assets/intern-setup-bg.jpg');
+    background-image: url('../img/intern-setup-bg.jpg');
     background-position: 0 -60px;
     background-size: cover
 }
@@ -7915,7 +7907,7 @@ html.page-bg-collage body {
 }
 
 .employer-setup-page-title small {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 18px
 }
 
@@ -7934,7 +7926,7 @@ html.page-bg-collage body {
 
 .employer-setup-wrap legend {
     margin: 0 0 30px;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
     color: #F07712;
     text-align: center;
@@ -8018,7 +8010,7 @@ html.page-bg-collage body {
 .opportunity-title {
     display: block;
     margin: 0 0 5px;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
     line-height: 1.2;
     color: #073A64
@@ -8041,14 +8033,18 @@ html.page-bg-collage body {
     float: right
 }
 
-.opportunity-meta {
+.opportunity-meta-item {
+    color: #606060;
+    font-size: 13px
+}
+
+.opportunity-content--metrics .opportunity-meta {
     margin-top: 10px
 }
 
-.opportunity-meta-item {
+.opportunity-content--metrics .opportunity-meta-item {
     padding-right: 30px;
-    color: #808080;
-    font-size: 13px
+    color: #808080
 }
 
 .opportunity-metrics {
@@ -8080,6 +8076,24 @@ html.page-bg-collage body {
     font-weight: 300
 }
 
+.opportunity-activity-type {
+    font-size: 12px;
+    color: #909090;
+    text-transform: uppercase
+}
+
+.opportunity-activity-type--recommended {
+    color: #4cae4c
+}
+
+.opportunity-activity-type--saved {
+    color: #F07712
+}
+
+.opportunity-activity-type--viewed {
+    color: #46b8da
+}
+
 .opportunity--box {
     margin: 0 0 30px;
     padding: 0;
@@ -8097,9 +8111,8 @@ html.page-bg-collage body {
 }
 
 .opportunity--box .opportunity-content {
-    margin-right: 70px;
-    padding: 10px 16px 16px;
-    padding-right: 10px
+    margin-right: 80px;
+    padding: 10px 16px 16px
 }
 
 .opportunity--box .opportunity-footer {
@@ -8150,8 +8163,7 @@ html.page-bg-collage body {
 }
 
 .opportunity--sidebar .opportunity-title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     color: #333
 }
 
@@ -8162,6 +8174,58 @@ html.page-bg-collage body {
 .opportunity--sidebar .opportunity-company {
     color: #333;
     font-weight: normal
+}
+
+.opportunity--large {
+    padding: 20px 0
+}
+
+.opportunity--large .opportunity-image {
+    width: 80px;
+    min-height: 80px
+}
+
+.opportunity--large .opportunity-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0
+}
+
+@media screen and (min-width:480px) {
+    .opportunity--large .opportunity-title {
+        font-size: 18px
+    }
+}
+
+@media screen and (min-width:624px) {
+    .opportunity--large .opportunity-title {
+        font-size: 20px
+    }
+}
+
+@media screen and (min-width:768px) {
+    .opportunity--large .opportunity-title {
+        font-size: 21px
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .opportunity--large .opportunity-title {
+        font-size: 24px
+    }
+}
+
+.opportunity--large .opportunity-content {
+    margin-right: 92px
+}
+
+@media screen and (min-width:480px) {
+    .opportunity--large .opportunity-content {
+        font-size: 14px
+    }
+}
+
+.opportunity--large .opportunity-activity-type {
+    margin-bottom: 2px
 }
 
 .profile-wrap {
@@ -8212,12 +8276,12 @@ html.page-bg-collage body {
 }
 
 .profile-card-info {
-    margin-left: 156px
+    margin-left: 140px
 }
 
 @media screen and (min-width:992px) {
     .profile-card-info {
-        margin-left: 176px
+        margin-left: 160px
     }
 }
 
@@ -8240,7 +8304,7 @@ html.page-bg-collage body {
 
 .profile-card-user-name {
     margin: 5px 0 10px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 32px;
     font-weight: normal;
     line-height: 1;
@@ -8267,7 +8331,7 @@ html.page-bg-collage body {
 }
 
 .profile-card-line-wrap {
-    margin: 0 0 5px
+    margin: 0 0 16px
 }
 
 .profile-card-line-wrap:before,
@@ -8276,17 +8340,27 @@ html.page-bg-collage body {
 }
 
 .profile-card-label {
-    float: left;
-    width: 160px;
-    padding-right: 10px;
     font-size: 13px;
     font-style: italic;
     color: #808080
 }
 
 .profile-card-value {
-    color: #666;
-    margin-left: 160px
+    color: #666
+}
+
+@media screen and (min-width:992px) {
+    .profile-card-line-wrap {
+        margin-bottom: 8px
+    }
+    .profile-card-label {
+        float: left;
+        width: 160px;
+        padding-right: 10px
+    }
+    .profile-card-value {
+        margin-left: 160px
+    }
 }
 
 .profile-card-for-content {
@@ -8315,9 +8389,23 @@ html.page-bg-collage body {
     border-radius: 0 !important
 }
 
+.profile-tabs>li>a:hover,
+.profile-tabs>li>a:focus {
+    color: #df6d0e
+}
+
 .profile-tabs>li>a:hover {
     background: #f0f0f0;
     border-color: #ddd #ddd #fff
+}
+
+@media screen and (max-width:479px) {
+    .profile-tabs>li>a {
+        font-size: 13px
+    }
+    .profile-tabs>li>a .fa {
+        display: block
+    }
 }
 
 .profile-tabs>li:first-child>a {
@@ -8339,7 +8427,8 @@ html.page-bg-collage body {
 }
 
 .profile-tab-content {
-    border-top: 0
+    border-top: 0;
+    margin-bottom: 30px
 }
 
 .profile-tab-content .tab-pane {
@@ -8525,7 +8614,6 @@ a.profile-sidebar-card-footer:hover {
     border-radius: 3px;
     box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.5);
     border-bottom-color: #bebebe;
-    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
@@ -8759,7 +8847,6 @@ a.profile-sidebar-card-footer:hover {
     display: block;
     width: 20px;
     height: 20px;
-    -webkit-transition: all ease-in-out .3s;
     transition: all ease-in-out .3s
 }
 
@@ -8856,7 +8943,6 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .chat-inner-wrap.animating {
-    -webkit-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out
 }
 
@@ -9063,7 +9149,7 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .article-title {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #333;
@@ -9086,7 +9172,7 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .article-subtitle {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #333;
@@ -9135,14 +9221,13 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .article-meta {
-    margin-bottom: 15px;
+    margin: 0 -20px 10px;
     color: #777
 }
 
 .article-meta-item {
     display: inline-block;
-    margin-right: 40px;
-    margin-bottom: 5px
+    margin: 0 20px 5px
 }
 
 .article-meta-item .fa {
@@ -9155,61 +9240,6 @@ a.profile-sidebar-card-footer:hover {
 
 .article-meta a:hover {
     color: #F07712
-}
-
-.article-share {
-    margin: 0 0 20px
-}
-
-.article-meta+.article-share {
-    margin-top: -5px
-}
-
-.article-share-label {
-    float: left;
-    margin-right: 16px;
-    font-size: 16px;
-    line-height: 44px
-}
-
-.article-share-item {
-    position: relative;
-    display: block;
-    float: left;
-    width: 44px;
-    height: 44px;
-    margin-right: 4px;
-    padding: 2px;
-    border-radius: 50%;
-    -webkit-transition: all .7s ease-out;
-    transition: all .7s ease-out;
-    overflow: hidden
-}
-
-.article-share-item:hover {
-    cursor: pointer;
-    top: -5px
-}
-
-.article-share-item img {
-    border: 0;
-    width: 100%;
-    height: 100%
-}
-
-.article-share-small .article-share-item {
-    width: 24px;
-    height: 24px;
-    margin-right: 4px
-}
-
-.article-share-right .article-share-item {
-    margin-right: 0;
-    margin-left: 8px
-}
-
-.article-share-small.article-share-right .article-share-item {
-    margin-left: 4px
 }
 
 .new-comment-form {
@@ -9271,6 +9301,47 @@ a.profile-sidebar-card-footer:hover {
 
 .related-post-meta {
     color: #777
+}
+
+.social-share {
+    margin: 0 0 20px
+}
+
+.social-share--opportunity {
+    margin-bottom: 10px
+}
+
+.social-share-label {
+    float: left;
+    margin-right: 16px;
+    font-size: 16px;
+    line-height: 44px
+}
+
+.social-share-item {
+    display: block;
+    float: left;
+    width: 44px;
+    height: 44px;
+    margin-right: 4px;
+    padding: 2px;
+    transition: all .7s ease-out
+}
+
+.social-share-item img {
+    position: relative;
+    top: 0;
+    border: 0;
+    width: 100%;
+    height: 100%
+}
+
+.social-share-item:hover {
+    cursor: pointer
+}
+
+.social-share-item:hover img {
+    top: -5px
 }
 
 .dropdown-search {
@@ -9366,7 +9437,6 @@ a.profile-sidebar-card-footer:hover {
     left: 5px;
     right: 5px;
     background: rgba(0, 0, 0, 0.4);
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 100%)
 }
 
@@ -9546,6 +9616,163 @@ a.profile-sidebar-card-footer:hover {
     font-size: 17px
 }
 
+.form-control.nice-select {
+    float: none
+}
+
+.nice-select.open {
+    border-color: transparent;
+    box-shadow: 0 0 1px 1px #F07712
+}
+
+.nice-select.open .list {
+    width: 100%;
+    min-width: 200px
+}
+
+.nice-select .option:hover {
+    color: #F07712
+}
+
+.nice-select .option.selected {
+    color: inherit
+}
+
+.experience-tab-pane.tab-pane {
+    padding-top: 5px
+}
+
+.experience {
+    padding: 10px 0 16px;
+    border-bottom: 1px solid #dfdfdf
+}
+
+.experience-title,
+.experience-meta {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.1
+}
+
+.experience-title {
+    margin: 0 0 4px;
+    font-size: 24px
+}
+
+.experience-meta {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #777
+}
+
+.experience-content {
+    margin: 0
+}
+
+.experience-content p {
+    margin-bottom: 20px
+}
+
+.experience-content p:last-child {
+    margin-bottom: 0
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form {
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25)
+    }
+}
+
+.opportunity-form.row,
+.opportunity-form .row {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.opportunity-form.row>*,
+.opportunity-form .row>* {
+    padding-left: 0;
+    padding-right: 0
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form.row>*,
+    .opportunity-form .row>* {
+        margin-bottom: 0
+    }
+}
+
+.opportunity-form label {
+    margin: 0
+}
+
+.opportunity-form .form-control,
+.opportunity-form .btn {
+    padding: 0 16px;
+    height: 46px;
+    font-size: 17px;
+    line-height: 44px;
+    border-radius: 4px
+}
+
+@media screen and (min-width:992px) {
+    .opportunity-form .form-control,
+    .opportunity-form .btn {
+        font-size: 18px
+    }
+}
+
+.opportunity-form .form-control {
+    box-shadow: none
+}
+
+.opportunity-form .form-control.open,
+.opportunity-form .form-control:focus {
+    border-color: #F07712
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .form-control {
+        border-color: transparent;
+        border-radius: 0
+    }
+}
+
+.opportunity-form select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .form-group:first-child .form-control {
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        border-right-color: #ddd
+    }
+    .opportunity-form .form-group:first-child .form-control.open,
+    .opportunity-form .form-group:first-child .form-control:focus {
+        border-right-color: #F07712
+    }
+}
+
+.opportunity-form .btn {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+}
+
+.opportunity-form .btn .fa {
+    position: relative;
+    top: -1px;
+    margin-right: 5px
+}
+
+@media screen and (min-width:768px) {
+    .opportunity-form .btn {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0
+    }
+}
+
 .modal-open {
     overflow: hidden
 }
@@ -9567,7 +9794,6 @@ a.profile-sidebar-card-footer:hover {
     -webkit-transform: translate(0, -25%);
     -ms-transform: translate(0, -25%);
     transform: translate(0, -25%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out
@@ -9724,7 +9950,7 @@ a.profile-sidebar-card-footer:hover {
     position: absolute;
     z-index: 1070;
     display: block;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -9858,7 +10084,7 @@ a.profile-sidebar-card-footer:hover {
     display: none;
     max-width: 276px;
     padding: 1px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
@@ -10011,7 +10237,6 @@ a.profile-sidebar-card-footer:hover {
 .carousel-inner>.item {
     display: none;
     position: relative;
-    -webkit-transition: .6s ease-in-out left;
     transition: .6s ease-in-out left
 }
 
@@ -10023,7 +10248,6 @@ a.profile-sidebar-card-footer:hover {
 @media all and (transform-3d),
 (-webkit-transform-3d) {
     .carousel-inner>.item {
-        -webkit-transition: -webkit-transform 0.6s ease-in-out;
         transition: -webkit-transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -10107,7 +10331,6 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .carousel-control.left {
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
@@ -10116,7 +10339,6 @@ a.profile-sidebar-card-footer:hover {
 .carousel-control.right {
     left: auto;
     right: 0;
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
@@ -10328,14 +10550,16 @@ a.profile-sidebar-card-footer:hover {
 .chat-box:after,
 .chat-box-message:before,
 .chat-box-message:after,
-.article-share:before,
-.article-share:after,
 .comment-header:before,
 .comment-header:after,
+.social-share:before,
+.social-share:after,
 .featured-posts:before,
 .featured-posts:after,
 .media-meta:before,
 .media-meta:after,
+.experience-list:before,
+.experience-list:after,
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
@@ -10376,10 +10600,11 @@ a.profile-sidebar-card-footer:hover {
 .chat-inner-wrap:after,
 .chat-box:after,
 .chat-box-message:after,
-.article-share:after,
 .comment-header:after,
+.social-share:after,
 .featured-posts:after,
 .media-meta:after,
+.experience-list:after,
 .modal-header:after,
 .modal-footer:after {
     clear: both
@@ -10709,8 +10934,16 @@ a.profile-sidebar-card-footer:hover {
     margin-bottom: 15px !important
 }
 
+.margin-b-20 {
+    margin-bottom: 20px !important
+}
+
 .margin-b-25 {
     margin-bottom: 25px !important
+}
+
+.margin-b-30 {
+    margin-bottom: 30px !important
 }
 
 .pos-r {
@@ -10798,7 +11031,7 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .blog-page-title {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #333;
@@ -10822,7 +11055,7 @@ a.profile-sidebar-card-footer:hover {
 }
 
 .blog-page-subtitle {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #333;
@@ -10863,31 +11096,11 @@ a.profile-sidebar-card-footer:hover {
     color: #808080
 }
 
-span.select2:nth-child(4){
-    display: none;
-}
-
-.select2.select2-container.select2-container--default.select2-container--below{
-    display: block;
-}
-
-
-#dropzone{
-    border: 1px dashed #aaa;
-    height: 250px;
-    background-color: #eee;
-    font-size: 22px;
-    color: #999;
-    text-align: center;
-    padding-top: 10%;
-}
-
-#dropzone h1{
-    font-size: 64px;
-    color:#999;
-}
-
-#dropzone h3{
-    font-size: 18px;
-    color:#999;
+@media screen and (min-width:768px) {
+    .responsive-left {
+        float: left
+    }
+    .responsive-right {
+        float: right
+    }
 }
