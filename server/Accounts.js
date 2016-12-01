@@ -4,13 +4,26 @@ Accounts.onCreateUser(function (options, user) {
         user.email = user.services.facebook.email;
         user.profilePicture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
         user.username = user.services.facebook.name;
+        user.profile = {
+            first_name: user.services.facebook.first_name,
+            last_name: user.services.facebook.last_name,
+            fullname: user.services.facebook.first_name+' '+user.services.facebook.last_name,
+            phone: null,
+            user_type: "employee"
+        };
+        user.roles = ["employee"];
+        //Roles.addUsersToRoles(user._id, ['employee']);
         //other fields which you can also insert as '' or null
     }
+
+    /**/
 
     if (typeof (user.services.twitter) != "undefined") {
         user.email = '';
         user.profilePicture = user.services.twitter.profile_image_url;
         user.username = user.services.twitter.screenName;
+        user.roles = ["employee"];
+        //Roles.addUsersToRoles(user._id, ['employee']);
         //other fields which you can also insert as '' or null
     }
 
@@ -18,6 +31,15 @@ Accounts.onCreateUser(function (options, user) {
         user.email = user.services.google.email;
         user.profilePicture = user.services.google.picture;
         user.username = user.services.google.name;
+        user.profile = {
+            first_name: user.services.google.given_name,
+            last_name: user.services.google.family_name,
+            fullname: user.services.google.name,
+            phone: '',
+            user_type: "employee"
+        };
+        user.roles = ["employee"];
+        //Roles.addUsersToRoles(user._id, ['employee']);
         //other fields which you can also insert as '' or null
     }
 

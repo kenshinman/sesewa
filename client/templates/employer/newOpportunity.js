@@ -31,10 +31,13 @@ Template.newOpportunity.events({
             duration: e.target.duration.value,
             salary: e.target.salary.value,
             createdAt: new Date(),
-            owner: Meteor.userId(),
+            owner: {
+                image: Meteor.user().profilePicture,
+                username: Meteor.user().username
+            },
             applicants: []
         }
-        //console.log(opportunityObject);
+        console.log(opportunityObject);
         //return false;
 
 
@@ -49,3 +52,6 @@ Template.newOpportunity.events({
         return false;
     }
 })
+
+
+// image:"/cfs/files/Images/SxawnsWBggLqd858a", username:"kaydence co"

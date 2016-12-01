@@ -1,3 +1,3 @@
 Template.registerHelper('emailIsVerified', function(userId){
-   return Meteor.user().emails[0].verified;
+   return Meteor.user().registered_emails[0].verified;
 });

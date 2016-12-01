@@ -18,7 +18,17 @@
                             <span class="placeholder-text hidden">Intern's full name goes here</span>
                         </h4>
                         <div class="profile-card-education-summary">
-                            {{#if isGraduate setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}} {{/if}} {{#if isUnderGraduate setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}} {{/if}} {{#if isPreUniversity setUp.education_level}} Computer Science {{setUp.education_level.level}} at {{setUp.education_level.school}} {{/if}}
+                            {{#if isGraduate setUp.education_level}}
+                                Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}}
+                            {{/if}}
+
+                            {{#if isUnderGraduate setUp.education_level}}
+                                Computer Science {{setUp.education_level.level}} at {{setUp.education_level.institution}}
+                            {{/if}}
+
+                            {{#if isPreUniversity setUp.education_level}}
+                                Student ( {{setUp.education_level.level}} ) at {{setUp.education_level.school}}
+                            {{/if}}
                             <!--                           {{setUp.education_level}}-->
 
                             <span class="placeholder-text hidden">Some details about the intern's education here too!</span>

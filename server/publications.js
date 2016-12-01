@@ -10,7 +10,8 @@ Meteor.publish("userData", function () {
                 'username': 1,
                 'isSetUp': 1,
                 'profile': 1,
-                'roles': 1
+                'roles': 1,
+                'registered_emails': 1
             }
         });
     } else {
@@ -26,3 +27,7 @@ Meteor.users.allow({
         return true;
     }
 });
+
+Meteor.publish('allOpportunities', function(){
+    return Opportunities.find({});
+})
