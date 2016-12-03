@@ -22,3 +22,10 @@ Template.registerHelper('beforeThisYear', function(year){
     return years;
 });
 
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format("ddd Do MMM, YYYY");
+});
+
+Template.registerHelper('fromNow', function(date) {
+  return moment(date).fromNow();
+});

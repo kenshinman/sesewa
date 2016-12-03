@@ -27,17 +27,19 @@ Template.newOpportunity.events({
             requirements: e.target.requirements.value,
             opportunity_type: e.target.opportunity_type.value,
             location: e.target.location.value.trim(),
-            expiresAt: e.target.expiry_date.value,
+            expiresAt: new Date(e.target.expiry_date.value),
             duration: e.target.duration.value,
             salary: e.target.salary.value,
             createdAt: new Date(),
             owner: {
+                id: Meteor.userId(),
                 image: Meteor.user().profilePicture,
                 username: Meteor.user().username
             },
-            applicants: []
+            applicants: [],
+            hires: []
         }
-        console.log(opportunityObject);
+        //console.log(opportunityObject);
         //return false;
 
 

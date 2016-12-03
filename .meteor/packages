@@ -52,6 +52,7 @@ gwendall:accounts-helpers
 matb33:collection-hooks
 twbs:bootstrap
 
+dfischer:prerenderio
 flawless:meteor-toastr
 dbarrett:dropzonejs
 natestrauser:select2

@@ -18,7 +18,7 @@
                 </div>
                 <div class="opportunity-footer">
                     <a data-target="#opportunityModal-1" data-toggle="modal">View Description</a>
-                    <a href="#" class="primary-link">Apply</a>
+                    <a href="/opportunity/{{_id}}/{{slug}}" class="primary-link">Apply</a>
                 </div>
             </div>
             <div class="modal fade" id="opportunityModal-1" tabindex="-1" role="dialog" aria-labelledby="opportunityModalLabel">
@@ -29,24 +29,7 @@
                             <h4 class="modal-title opportunityModalLabel"> {{title}} </h4>
                         </div>
                         <div class="modal-body">
-                            <div class="article-share">
-                                <div class="article-share-label hide">Recommend this: </div>
-                                <a href="#" title="Share this opportunity on Facebook" class="article-share-item">
-                                    <img src="/assets/facebook.png" alt="Facebook">
-                                </a>
-                                <a href="#" title="Share this opportunity on Twitter" class="article-share-item">
-                                    <img src="/assets/twitter.png" alt="Twitter">
-                                </a>
-                                <a href="#" title="Share this opportunity on Google+" class="article-share-item">
-                                    <img src="/assets/google+.png" alt="Google+">
-                                </a>
-                                <a href="#" title="Share this opportunity on LinkedIn" class="article-share-item">
-                                    <img src="/assets/linkedin.png" alt="LinkedIn">
-                                </a>
-                                <a href="#" title="Share this opportunity via Email" class="article-share-item">
-                                    <img src="/assets/email.png" alt="Email" width="48">
-                                </a>
-                            </div>
+                            {{> shareButtons}}
                             <h3>Description</h3>
                             {{{description}}}
                             <br>

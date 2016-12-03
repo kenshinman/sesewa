@@ -56,75 +56,33 @@
                 <div class="tab-content profile-tab-content">
                     <div role="tabpanel" class="tab-pane active" id="opportunities">
                         <div class="opportunities">
+                            {{#each getOpportunities}}
                             <div class="opportunity">
                                 <div class="opportunity-metrics">
                                     <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">157</span>
+                                        <span class="opportunity-metrics-item-value">{{applicants.length}}</span>
                                         <span class="opportunity-metrics-item-label">Applicants</span>
                                     </div>
                                     <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">6</span>
+                                        <span class="opportunity-metrics-item-value">{{hires.length}}</span>
                                         <span class="opportunity-metrics-item-label">Hires</span>
                                     </div>
                                 </div>
                                 <div class="opportunity-content opportunity-content--metrics">
-                                    <span class="label label-default">Volunteering</span>
-                                    <a href="http://sesewa.herokuapp.com/opportunities/view.php?is_employer" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
+                                    <span class="label label-default">{{opportunity_type}}</span>
+                                    <a href="/opportunity/{{_id}}/{{slug}}" class="opportunity-title">{{title}}</a>
                                     <div class="hide">
-                                        <span class="opportunity-location">Lagos, NG</span>
+                                        <span class="opportunity-location">{{location}}, NG</span>
                                     </div>
                                     <div class="opportunity-meta">
-                                        <span class="opportunity-meta-item"><strong>Created:</strong> 2nd May 2016</span>
-                                        <span class="opportunity-meta-item"><strong>Expired:</strong> 29th May 2016</span>
+                                        <span class="opportunity-meta-item"><strong>Created:</strong> {{formatDate createdAt}} </span>
+                                        <span class="opportunity-meta-item"><strong>Expired:</strong> {{formatDate expiresAt}} </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="opportunity">
-                                <div class="opportunity-metrics">
-                                    <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">157</span>
-                                        <span class="opportunity-metrics-item-label">Applicants</span>
-                                    </div>
-                                    <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">6</span>
-                                        <span class="opportunity-metrics-item-label">Hires</span>
-                                    </div>
-                                </div>
-                                <div class="opportunity-content opportunity-content--metrics">
-                                    <span class="label label-default">Volunteering</span>
-                                    <a href="http://sesewa.herokuapp.com/opportunities/view.php?is_employer" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
-                                    <div class="hide">
-                                        <span class="opportunity-location">Lagos, NG</span>
-                                    </div>
-                                    <div class="opportunity-meta">
-                                        <span class="opportunity-meta-item"><strong>Created:</strong> 2nd May 2016</span>
-                                        <span class="opportunity-meta-item"><strong>Expired:</strong> 29th May 2016</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="opportunity">
-                                <div class="opportunity-metrics">
-                                    <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">157</span>
-                                        <span class="opportunity-metrics-item-label">Applicants</span>
-                                    </div>
-                                    <div class="opportunity-metrics-item">
-                                        <span class="opportunity-metrics-item-value">6</span>
-                                        <span class="opportunity-metrics-item-label">Hires</span>
-                                    </div>
-                                </div>
-                                <div class="opportunity-content opportunity-content--metrics">
-                                    <span class="label label-default">Volunteering</span>
-                                    <a href="http://sesewa.herokuapp.com/opportunities/view.php?is_employer" class="opportunity-title">Volunteers needed for the Lagos Fashion Week 2016</a>
-                                    <div class="hide">
-                                        <span class="opportunity-location">Lagos, NG</span>
-                                    </div>
-                                    <div class="opportunity-meta">
-                                        <span class="opportunity-meta-item"><strong>Created:</strong> 2nd May 2016</span>
-                                        <span class="opportunity-meta-item"><strong>Expired:</strong> 29th May 2016</span>
-                                    </div>
-                                </div>
-                            </div>
+                            {{else}}
+                            <h3>You have not created any opportunity yet</h3>
+                            {{/each}}
                         </div>
                     </div>
 
@@ -204,6 +162,9 @@
                     </div>
                 </div>
 
+            {{#with myOpportunities currentUser._id}}
+            {{this.title}}
+            {{/with}}
             </div>
         </div>
         {{else}}
@@ -213,4 +174,5 @@
         {{/if}}
     {{/with}}
     </div>
+
 </template>

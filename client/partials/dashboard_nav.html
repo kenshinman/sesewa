@@ -41,25 +41,35 @@
                         </form>
                     </div>
                 </li>
+                {{#if currentUser}}
                 {{#with currentUser}}
                 <li class="dropdown user-dropdown">
                     <a href="#" class="user-dropdown-toggle dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
                         <img class="user-dropdown-image" src="{{profilePicture}}">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="/{{profile.user_type}}/dashboard">Profile</a></li>
+                        <li><a href="/dashboard">Profile</a></li>
                         <li><a href="#" class="sign-out"> Sign out</a></li>
                     </ul>
                 </li>
                 {{/with}}
+                {{else}}
+                <li><a data-toggle="modal" data-target="#signinModal">Sign In</a></li>
+                    <li>
+                        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">Sign Up
+                        </button>
+                    </li>
+                {{/if}}
             </ul>
         </div>
         <!-- /.container-fluid -->
     </nav>
-    {{#if emailIsVerified}}
-        <p class="text-center">You are verified</p>
-    {{else}}
-        <p class="alert alert-warning">You need to verify your email address. We have sent you a link. Thanks</p>
-    {{/if}}
 
+    {{#if currentUser}}
+        {{#if emailIsVerified}}
+            <p class="text-center">You are verified</p>
+        {{else}}
+            <p class="alert alert-warning">You need to verify your email address. We have sent you a link. Thanks</p>
+        {{/if}}
+    {{/if}}
 </template>

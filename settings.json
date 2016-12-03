@@ -1,5 +1,12 @@
 {
-  "public": {
-
-  }
+    "PrerenderIO": {
+        "token": "wi7DqaiBORNoXflqTGmT",
+        "host": "http://45.55.93.2",
+        "prerenderServiceUrl": "http://service.prerender.io/"
+    },
+    "public":{
+        "ga": {
+            "id": "UA-79112564-1"
+        }
+    }
 }

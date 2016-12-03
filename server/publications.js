@@ -30,4 +30,13 @@ Meteor.users.allow({
 
 Meteor.publish('allOpportunities', function(){
     return Opportunities.find({});
-})
+});
+
+Meteor.publish('singleOpportunity', function(id){
+    return Opportunities.find({_id: id});
+});
+
+Meteor.publish('myOpportunities', function(id){
+    return Opportunities.find({"owner.id": id})
+});
+
