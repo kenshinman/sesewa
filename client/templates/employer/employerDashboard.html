@@ -1,6 +1,6 @@
 <template name="employerDashboard">
     <div class="container">
-        {{#with currentUser}}
+
         {{#if isSetUp}}
         <div class="row profile-wrap">
             <div class="col-xs-12 col-sm-4 profile-sidebar">
@@ -172,7 +172,7 @@
         {{goTo '/employer/setup'}}
 
         {{/if}}
-    {{/with}}
+
     </div>
 
 </template>

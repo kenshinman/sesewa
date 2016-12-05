@@ -108,7 +108,6 @@ meteorhacks:inject-initial@1.0.4
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 meteorhacks:search-source@1.4.2
-meteorhacks:ssr@2.2.0
 meteortoys:allthings@3.0.0
 meteortoys:authenticate@3.0.0
 meteortoys:autopub@3.0.0

@@ -54,23 +54,25 @@
                                     <img src="{{this}}" alt="Profile Photo" title="Kunle A.">
                                 </li>
                                 {{else}}
-                                <li>There are no applications yet</li>
+<!--                                <strong>There are no applications yet</strong>-->
                                 {{/each}}
                             </ul>
                             <div class="profile-photos-overlap-text">
-                                {{applicants.length}}
+                                {{applicants.length}} Applicant(s)
                             </div>
 
                         </div>
+                        {{#if currentUser}}
+                            {{#if isOwner currentUser._id owner.id}}
+                            <a href="#" class="btn btn-lg btn-primary btn-rounded margin-t-10" data-toggle="modal"
+                                   data-target="#applicantsModal">View Applicants</a>
+                            {{else}}
+                            <a href="/opportunity/{{_id}}/{{slug}}" class="btn btn-lg btn-primary btn-rounded margin-t-10 width-120 apply">Apply</a>
 
-                        {{#if isOwner currentUser._id owner.id}}
-                        <a href="#" class="btn btn-lg btn-primary btn-rounded margin-t-10" data-toggle="modal"
-                               data-target="#applicantsModal">View Applicants</a>
+                            {{/if}}
                         {{else}}
-                        <a href="/opportunity/{{_id}}/{{slug}}" class="btn btn-lg btn-primary btn-rounded margin-t-10 width-120 apply">Apply</a>
-
+                            <p><strong>Please login to Apply for this Opportunity</strong></p>
                         {{/if}}
-
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="http://sesewa.herokuapp.com/opportunities/" class="profile-sidebar-card-footer">
+                    <a href="/opportunities" class="profile-sidebar-card-footer">
                         View more opportunities
                     </a>
                 </div>
@@ -184,6 +186,8 @@
             <!--            sidebar ends-->
         </div>
     </div>
+    {{#if currentUser}}
+<!--    apply modal begins -->
     <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -198,6 +202,7 @@
                             <input type="file" class="form-control" name="cv" id="cv">
                         </div>
                     </div>
+                    <input type="hidden" name="opportunity_id" value="{{_id}}">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Apply</button>
@@ -206,6 +211,8 @@
             </div>
         </div>
     </div>
+    {{/if}}
+<!--    apply modal ends-->
 
     {{#if isOwner currentUser._id owner.id }}
 
@@ -226,30 +233,31 @@
                                     <label for="applicant_0">
                                     </label>
                                 </div>
-                                <a href="/intern/profile.php?is_employer" class="user-image">
-                                    <img src="/assets/img/profile/profile-female1.jpg" alt="">
+                                <a href="/employee/dashboard/{{employee_id}}" class="user-image">
+                                    <img src="/assets/profile-female1.jpg" alt="">
                                 </a>
                                 <div class="user-content">
-                                    <a href="/intern/profile.php?is_employer" class="user-username">Hello all</a>
+                                    <a href="/employee/dashboard/{{employee_id}}" class="user-username">Hello all</a>
                                     <div class="user-tagline">Computer undergraduate at University of Lagos</div>
                                     <div class="user-details">CGPA: 4.56 Interested in Volunteering, etc</div>
                                 </div>
                             </div>
                             <div class="user">
                                 <div class="user-select">
-                                    <input id="applicant_1" type="checkbox">
-                                    <label for="applicant_1">
+                                    <input id="applicant_0" type="checkbox">
+                                    <label for="applicant_0">
                                     </label>
                                 </div>
-                                <a href="/intern/profile.php?is_employer" class="user-image">
-                                    <img src="/assets/img/profile/profile-female1.jpg" alt="">
+                                <a href="/employee/dashboard/{{employee_id}}" class="user-image">
+                                    <img src="/assets/profile-female1.jpg" alt="">
                                 </a>
                                 <div class="user-content">
-                                    <a href="/intern/profile.php?is_employer" class="user-username">Hello all</a>
+                                    <a href="/employee/dashboard/{{employee_id}}" class="user-username">Hello all</a>
                                     <div class="user-tagline">Computer undergraduate at University of Lagos</div>
                                     <div class="user-details">CGPA: 4.56 Interested in Volunteering, etc</div>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>

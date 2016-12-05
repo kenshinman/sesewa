@@ -6,8 +6,8 @@ Template.singleOpportunity.events({
         $('.modal-backdrop').show();
 
         console.log('clicked')
-    },
-    /*"submit form#apply": function(e){
+    }/*,
+    "submit form#apply": function(e){
         e.preventDefault();
 
         let file = $('#cv').get(0).files[0];
@@ -20,7 +20,7 @@ Template.singleOpportunity.events({
                     throw new Meteor.Error(err);
                 }else{
 
-                    Meteor.call('applyForOpportunity', userId, opportunityid);
+                    Meteor.call('applyForOpportunity', userId, opportunityId);
                     //window.location.reload();
 
                     event.target.email.value = "";

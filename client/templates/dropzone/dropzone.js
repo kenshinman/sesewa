@@ -22,7 +22,7 @@ Template.dropzoneMi.events({
                         $('#uploaded-image').attr('src', imageUrl);
                         $('#uploaded-image').show();
                         toastr.success('image Uploaded');
-                    }, 1000);
+                    }, 3000);
 
                     $('#image-url').val(imageUrl);
                 }
