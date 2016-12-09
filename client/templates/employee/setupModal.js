@@ -1,3 +1,9 @@
+Template.setupModal.helpers({
+    "myInstitutions": function(){
+        return Institutions.find({}, {$sort: {school_name: 1}});
+    }
+})
+
 Template.setupModal.events({
     'change input:radio[name=education_level]': function (e) {
         var self = $(e.currentTarget);
@@ -54,7 +60,7 @@ Template.setupModal.events({
         if (education_level_ == "Graduate") {
             education_level_value = {
                 level: Session.get('education_level'),
-                institution: e.target.grad_institution.value,
+                institution: $('#grad_institution').val().trim(),
                 graduating_cgpa: e.target.graduating_cgpa.value,
                 graduation_class: e.target.graduating_class.value,
                 status: e.target.nysc.value, //i am..
@@ -63,7 +69,7 @@ Template.setupModal.events({
         } else if (education_level_ == "Undergraduate") {
             education_level_value = {
                 level: Session.get('education_level'),
-                institution: e.target.underg_institution.value,
+                institution: $('#underg_institution').val().trim(),
                 current_level: e.target.underg_current_year.value,
                 expected_graduation_year: e.target.expected_graduation_year.value,
                 cgpa: e.target.cgpa.value
@@ -77,7 +83,7 @@ Template.setupModal.events({
         }
 
         var setUp = {
-            image: e.target.image_url.value,
+            image: Session.get('imageUrl'),
             gender: e.target.gender.value,
             date_of_birth: e.target.date_of_birth.value,
             im: e.target.im.value,
@@ -91,7 +97,7 @@ Template.setupModal.events({
             }
 
         }
-        //console.log(setUp);
+        console.log(setUp);
         //return false;
 
         Meteor.call('setUp', Meteor.userId(), setUp, function (error, response) {
@@ -99,7 +105,7 @@ Template.setupModal.events({
                 toastr.error(error.reason, 'Error')
                 return false
             }
-            Router.go('/employee/dashboard');
+            Router.go('/dashboard');
             toastr.success('Congrats! Your Set Up is complete.');
             $('.profile-card-value > .label:nth-child(1)').addClass('label-primary')
             $('.profile-card-value > .label:nth-child(2)').addClass('label-danger')
@@ -112,6 +118,8 @@ Template.setupModal.events({
 
 Template.setupModal.onRendered(function () {
     $('#my-datepicker').datepicker();
+    $('#underg_institution').select2();
+    $('#grad_institution').select2();
 
     //automatically set education level
     var education_level = $('input:radio[name=education_level]:checked').val();

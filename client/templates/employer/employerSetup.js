@@ -9,7 +9,7 @@ Template.employerSetup.events({
         e.preventDefault();
 
         var setUp = {
-            image: e.target.company_logo.value,
+            image: Session.get('imageUrl'),
             industry: e.target.industry.value,
             company_size: e.target.company_size.value,
             company_type: e.target.company_type.value,
@@ -30,7 +30,7 @@ Template.employerSetup.events({
                 return false;
             }
             toastr.success('Your Account has bee successfully set up', 'Congratulations')
-            Router.go('/employer/dashboard');
+            Router.go('/dashboard');
 
         })
         return false;

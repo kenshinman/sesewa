@@ -43,7 +43,7 @@ Template.employerSignup.events({
                 })
 
                 toastr.success('You have successfully created your Employer Account');
-                Router.go('/employer/dashboard')
+                Router.go('/dashboard')
             })
         }else{
             toastr.warning('All fields are required', 'Warning');
@@ -55,7 +55,6 @@ Template.employerSignup.events({
 
 
 Template.employerSignup.onRendered(function(){
-
 
     if($('input:checkbox.agreement').is(':checked')){
         alert('checked')

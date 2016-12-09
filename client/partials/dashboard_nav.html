@@ -67,7 +67,9 @@
 
     {{#if currentUser}}
         {{#if emailIsVerified}}
-            <p class="text-center">You are verified</p>
+            <p class="text-center">
+                <span class="fa fa-thumbs-up verified-thumb"></span>
+            </p>
         {{else}}
             <p class="alert alert-warning">You need to verify your email address. We have sent you a link. Thanks</p>
         {{/if}}

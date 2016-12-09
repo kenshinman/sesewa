@@ -1,0 +1,21 @@
+<template name="uploadForm">
+    {{#with currentUpload}} Uploading <b>{{file.name}}</b>:
+    <span id="progress">{{progress.get}}%</span> {{else}}
+    <label id="dropzone" class="dropzone">
+        <h1><i class="fa fa-picture-o" aria-hidden="true"></i></h1>
+        <h3>Drag &amp; Drop your image here to upload</h3>
+        <p class="text-center">or click toselect one</p>
+
+       <input id="fileInput" type="file" class="fileInput" name=""/>
+
+    </label>
+    <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 3MB</small></p>
+    {{/with}}
+</template>
+
+<template name="uploadedFiles">
+
+    {{#with uploadedFile}}
+    <img src="{{this}}" alt="" width="200" height="auto" id="uploaded-image"> {{/with}}
+
+</template>

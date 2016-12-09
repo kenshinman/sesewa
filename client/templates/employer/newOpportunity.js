@@ -49,7 +49,7 @@ Template.newOpportunity.events({
                 return false;
             }
             toastr.success('You have successfully created an opportunity', 'Success')
-            Router.go('/employer/dashboard');
+            Router.go('/dashboard');
         });
         return false;
     }

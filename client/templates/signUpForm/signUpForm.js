@@ -46,7 +46,7 @@ Template.signUpForm.events({
                             $('.modal-backdrop').hide();
                             Roles.addUsersToRoles(Meteor.userId(), ['employee'])
                             toastr.success("Your registration was successful, You are now logged in.");
-                            Router.go('/employee/dashboard');
+                            Router.go('/dashboard');
                         }
                     });
 
