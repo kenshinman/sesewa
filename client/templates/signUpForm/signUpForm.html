@@ -1,0 +1,72 @@
+<template name="signUpForm">
+    <form id="sign-up-form">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="signupModalLabel">Create your Sesewa account</h4>
+        </div>
+        <div class="modal-body no-max-height">
+        {{> entrySignUp}}
+<!--            <p class="text-center text-muted">Create your account using any of these social networks</p>-->
+            <!--<div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+                    <a href="http://sesewa.herokuapp.com/#" class="btn btn-block btn-social btn-lg btn-facebook"><i class="fa fa-facebook"></i>Sign up with Facebook</a>
+                    <a href="http://sesewa.herokuapp.com/#" class="btn btn-block btn-social btn-lg btn-google"><i class="fa fa-google-plus"></i>Sign up with Google+</a>
+                    <a href="http://sesewa.herokuapp.com/#" class="btn btn-block btn-social btn-lg btn-linkedin"><i class="fa fa-linkedin"></i>Sign up with Linkedin</a>
+                </div>
+            </div>-->
+            <div class="margin-t-25 margin-b-25 text-center text-muted">
+                OR
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 form-group form-group-lg">
+                    <label>First name</label>
+                    <input type="text" class="form-control" name="first_name">
+                </div>
+                <div class="col-xs-12 col-sm-6 form-group form-group-lg">
+                    <label for="">Last name</label>
+                    <input type="text" class="form-control" name="last_name">
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label>Email address</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <div class="form-group form-group-lg">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group form-group-lg">
+                <label>Mobile number</label>
+                <input type="text" class="form-control" name="phone">
+            </div>
+            <div class="form-group form-group-lg">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group form-group-lg">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" name="password1">
+            </div>
+            <div class="form-group form-group-lg hide hidden">
+                <label>I am...</label>
+                <label class="radio radio-adjust">
+                    <input type="radio" name="type_of_employee"> a Secondary School student
+                </label>
+                <label class="radio radio-adjust">
+                    <input type="radio" name="type_of_employee"> an Undergraduate
+                </label>
+                <label class="radio radio-adjust">
+                    <input type="radio" name="type_of_employee"> a recent Graduate
+                </label>
+            </div>
+            <input type="hidden" name="user_type" value="employee">
+            <div class="text-muted margin-t-25">
+                <i class="fa fa-lock"></i> By creating an account with Sesewa, you agree to our <a href="#">Terms
+                                of Service</a>
+            </div>
+            <div class="margin-t-10">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Create account</button>
+            </div>
+        </div>
+    </form>
+</template>

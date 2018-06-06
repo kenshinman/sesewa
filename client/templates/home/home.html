@@ -1,0 +1,153 @@
+<template name="home">
+    <div class="cta-wrap">
+        <div class="jumbotron cta">
+            <div class="container">
+                <h1 class="cta-title">Launch your career with <strong>Sesewa</strong></h1>
+                <div class="row cta-search-form-wrap">
+                    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        {{> searchForm}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-section-collage-wrap">
+        <div class="home-section home-section-collage home-section-opportunities">
+            <div class="container">
+                <h3 class="home-section-title">Featured Opportunities</h3>
+
+                {{> homeOpportunities}}
+
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg multi-level-button" data-toggle="modal" data-target="#signupModal">
+                        <strong>Sign Up Free</strong>
+                        <br>
+                        <small>Wonderful opportunities await</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--    partner logos-->
+    <div class="home-section home-section-blue-bg home-section-partners">
+        <div class="container">
+            {{> homePartners}}
+        </div>
+    </div>
+
+    <!--blog-->
+
+    {{> homeBlog}}
+
+    <!--testimonials-->
+    {{> homeTestimonials}}
+</template>
+
+
+<template name="searchForm">
+    <form class="row opportunity-form" action="/opportunities/" method="post">
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="opportunity-form-job-type" class="sr-only">Choose a job type</label>
+            <select id="opportunity-form-job-type" class="form-control" data-nice-select>
+                <option value="">Choose a Job Type</option>
+                <option>Internship</option>
+                <option>Job Shadowing</option>
+                <option>Volunteering</option>
+                <option>Apprenticeship</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-5 form-group">
+            <label for="opportunity-form-job-type" class="sr-only">Choose a specialization</label>
+            <select id="opportunity-form-job-type" class="form-control" data-nice-select>
+                <option value="">Choose a Specialization</option>
+                <option>Engineering</option>
+                <option>Finance</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-3 form-group">
+            <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>
+    </form>
+</template>
+
+<template name="homeTestimonials">
+    <div class="home-section home-section-testimonials">
+        <div class="container">
+            <h3 class="home-section-title">Testimonials</h3>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 testimonial">
+                    <div class="testimonial-message">
+                        <blockquote>
+                            Intern's account on how useful Sesewa has been in adding useful skills and&nbsp;providing the right opportunities.
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-profile">
+                        <img src="/assets/profile-female1.jpg" alt="" class="img-circle testimonial-profile-image">
+                        <div class="testimonial-profile-name">
+                            Kemi Olayinka
+                            <small class="">Engineer Intern at GE Nigeria</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="homePartners">
+    <h3 class="home-section-title">Partners</h3>
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-sm-offset-3 col-md-2 col-md-offset-0">
+            <div class="box"></div>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="box"></div>
+        </div>
+    </div>
+    ></template>

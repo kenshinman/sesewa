@@ -1,0 +1,5 @@
+/*Template.registerHelper('institutionsList', function(){
+
+
+
+})*/

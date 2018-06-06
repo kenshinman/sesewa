@@ -1,0 +1,178 @@
+<template name="employerDashboard">
+    <div class="container">
+
+        {{#if isSetUp}}
+        <div class="row profile-wrap">
+            <div class="col-xs-12 col-sm-4 profile-sidebar">
+                <div class="profile-sidebar-card profile-company">
+                    <div class="profile-company-logo">
+                        <img src="{{profilePicture}}">
+                        <span class="placeholder-image placeholder-image-square hidden"></span>
+                    </div>
+                    <hr>
+                    <h2 class="profile-company-name">{{profile.company_name}}</h2>
+                    <p class="profile-company-description">{{{setUp.company_description}}}</p>
+                    <a href="/employer/new-opportunity" class="btn btn-primary profile-company-opportunity-btn">
+                        Post an opportunity
+                    </a>
+                    <div class="hidden-xs hidden-sm">
+                        <div class="profile-company-small-header">
+                            STATS
+                            <hr>
+                        </div>
+                        <div class="profile-company-stat">
+                            <div class="profile-company-stat-value">{{setUp.contact_details.company_state}}, NG</div>
+                            <div class="profile-company-stat-title">Location</div>
+                        </div>
+                        <div class="profile-company-stat">
+                            <div class="profile-company-stat-value">{{setUp.company_size}}</div>
+                            <div class="profile-company-stat-title">Employees</div>
+                        </div>
+                        <div class="profile-company-stat">
+                            <div class="profile-company-stat-value">{{setUp.industry}}</div>
+                            <div class="profile-company-stat-title">Industry</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 profile-column">
+                <form class="profile-search-form">
+                    <input type="text" class="profile-search-input" placeholder="Search Candidates">
+                    <button type="submit" class="profile-search-btn fa fa-search"></button>
+                </form>
+
+                <ul class="nav profile-tabs">
+                    <li class="half-width active">
+                        <a href="http://sesewa.herokuapp.com/employer/dashboard.php#opportunities" data-toggle="tab">
+                            <i class="fa fa-briefcase"></i> Opportunities
+                        </a>
+                    </li>
+                    <li class="half-width">
+                        <a href="http://sesewa.herokuapp.com/employer/dashboard.php#inbox" data-toggle="tab">
+                            <i class="fa fa-inbox"></i> Inbox
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content profile-tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="opportunities">
+                        <div class="opportunities">
+                            {{#each getOpportunities}}
+                            <div class="opportunity">
+                                <div class="opportunity-metrics">
+                                    <div class="opportunity-metrics-item">
+                                        <span class="opportunity-metrics-item-value">{{applicants.length}}</span>
+                                        <span class="opportunity-metrics-item-label">Applicants</span>
+                                    </div>
+                                    <div class="opportunity-metrics-item">
+                                        <span class="opportunity-metrics-item-value">{{hires.length}}</span>
+                                        <span class="opportunity-metrics-item-label">Hires</span>
+                                    </div>
+                                </div>
+                                <div class="opportunity-content opportunity-content--metrics">
+                                    <span class="label label-default">{{opportunity_type}}</span>
+                                    <a href="/opportunity/{{_id}}/{{slug}}" class="opportunity-title">{{title}}</a>
+                                    <div class="hide">
+                                        <span class="opportunity-location">{{location}}, NG</span>
+                                    </div>
+                                    <div class="opportunity-meta">
+                                        <span class="opportunity-meta-item"><strong>Created:</strong> {{formatDate createdAt}} </span>
+                                        <span class="opportunity-meta-item"><strong>Expired:</strong> {{formatDate expiresAt}} </span>
+                                    </div>
+                                </div>
+                            </div>
+                            {{else}}
+                            <h3>You have not created any opportunity yet</h3>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane inbox-tab-pane" id="inbox">
+                        <div class="inbox-list">
+                            <a class="inbox-item" href="http://sesewa.herokuapp.com/employer/dashboard.php#">
+                                <div class="inbox-item-image">
+                                    <img src="/assets/profile-male2.jpg" onerror="this.src=&#39;/assets/img/profile/default.png&#39;">
+                                </div>
+                                <div class="inbox-item-content">
+                                    <div class="inbox-item-title">
+                                        <span class="inbox-item-username">Tomide Olagunju</span>
+                                        <span class="inbox-item-datetime">9:35</span>
+                                    </div>
+                                    <div class="inbox-item-message">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="inbox-item" href="http://sesewa.herokuapp.com/employer/dashboard.php#">
+                                <div class="inbox-item-image">
+                                    <img src="/assets/profile-male2.jpg" onerror="this.src=&#39;/assets/img/profile/default.png&#39;">
+                                </div>
+                                <div class="inbox-item-content">
+                                    <div class="inbox-item-title">
+                                        <span class="inbox-item-username">Tomide Olagunju</span>
+                                        <span class="inbox-item-datetime">Yesterday</span>
+                                    </div>
+                                    <div class="inbox-item-message">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="inbox-item" href="http://sesewa.herokuapp.com/employer/dashboard.php#">
+                                <div class="inbox-item-image">
+                                    <img src="/assets/profile-male2.jpg" onerror="this.src=&#39;/assets/img/profile/default.png&#39;">
+                                </div>
+                                <div class="inbox-item-content">
+                                    <div class="inbox-item-title">
+                                        <span class="inbox-item-username">Tomide Olagunju</span>
+                                        <span class="inbox-item-datetime">Tuesday</span>
+                                    </div>
+                                    <div class="inbox-item-message">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="inbox-item" href="http://sesewa.herokuapp.com/employer/dashboard.php#">
+                                <div class="inbox-item-image">
+                                    <img src="/assets/profile-male2.jpg" onerror="/img/avatar.png">
+                                </div>
+                                <div class="inbox-item-content">
+                                    <div class="inbox-item-title">
+                                        <span class="inbox-item-username">Tomide Olagunju</span>
+                                        <span class="inbox-item-datetime">Apr 21</span>
+                                    </div>
+                                    <div class="inbox-item-message">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="inbox-item" href="http://sesewa.herokuapp.com/employer/dashboard.php#">
+                                <div class="inbox-item-image">
+                                    <img src="/assets/profile-male2.jpg" onerror="this.src=&#39;/assets/img/profile/default.png&#39;">
+                                </div>
+                                <div class="inbox-item-content">
+                                    <div class="inbox-item-title">
+                                        <span class="inbox-item-username">Tomide Olagunju</span>
+                                        <span class="inbox-item-datetime">17/02/2015</span>
+                                    </div>
+                                    <div class="inbox-item-message">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti labore nam quaerat, quidem soluta! Atque dolorum, quis.
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            {{#with myOpportunities currentUser._id}}
+            {{this.title}}
+            {{/with}}
+            </div>
+        </div>
+        {{else}}
+
+        {{goTo '/employer/setup'}}
+
+        {{/if}}
+
+    </div>
+
+</template>

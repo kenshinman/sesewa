@@ -1,0 +1,71 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+reactive-var
+jquery
+tracker
+
+standard-minifier-css
+standard-minifier-js
+es5-shim
+ecmascript
+
+#autopublish             # Publish all data to the clients (for prototyping)
+#insecure                # Allow all DB writes from clients (for prototyping)
+
+aldeed:collection2
+aldeed:autoform
+mrt:flash-messages
+meteorhacks:fast-render
+iron:router
+cfs:standard-packages
+cfs:gridfs
+accounts-ui
+accounts-password
+joshowens:accounts-entry
+alanning:roles
+accounts-facebook
+accounts-twitter
+accounts-google
+check
+random
+momentjs:moment
+meteorhacks:search-source
+utilities:avatar
+joncursi:socket-io-client
+#gadicohen:phantomjs
+spiderable
+splendido:accounts-meld
+houston:admin
+session
+email
+fortawesome:fontawesome
+http
+gwendall:accounts-helpers
+matb33:collection-hooks
+twbs:bootstrap
+
+dfischer:prerenderio
+flawless:meteor-toastr
+dbarrett:dropzonejs
+natestrauser:select2
+tomi:upload-server
+#dburles:google-maps
+rajit:bootstrap3-datepicker
+raix:ui-dropped-event
+sacha:spin
+meteortoys:allthings
+#rexzh0u:bxslider
+#meteorhacks:ssr
+lookback:seo
+ostrio:files
+ostrio:templatehelpers
+pcel:loading
+shell-server

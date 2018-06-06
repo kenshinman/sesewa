@@ -1,0 +1,77 @@
+<template name="dashboard_nav">
+    <nav class="navbar navbar-static-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/logo2.jpg" alt="Sesewa Logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-collapse-dropdown navbar-left" id="navbar-collapse">
+                <ul class="nav navbar-nav active-underline">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Profile</a></li>
+                    <li><a href="/opportunities">Opportunities</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Academy <span class="fa fa-angle-down"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Classroom</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <ul class="nav navbar-nav navbar-force-right">
+                <li class="dropdown">
+                    <a class="navbar-search-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-search">
+                        <form action="#" class="dropdown-search-form">
+                            <input type="text" class="form-control input-lg" placeholder="Search Opportunities">
+                            <button class="fa fa-search lg" type="submit"></button>
+                        </form>
+                    </div>
+                </li>
+                {{#if currentUser}}
+                {{#with currentUser}}
+                <li class="dropdown user-dropdown">
+                    <a href="#" class="user-dropdown-toggle dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img class="user-dropdown-image" src="{{profilePicture}}">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="/dashboard">Profile</a></li>
+                        <li><a href="#" class="sign-out"> Sign out</a></li>
+                    </ul>
+                </li>
+                {{/with}}
+                {{else}}
+                <li><a data-toggle="modal" data-target="#signinModal">Sign In</a></li>
+                    <li>
+                        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">Sign Up
+                        </button>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    {{#if currentUser}}
+        {{#if emailIsVerified}}
+            <p class="text-center">
+                <span class="fa fa-thumbs-up verified-thumb"></span>
+            </p>
+        {{else}}
+            <p class="alert alert-warning">You need to verify your email address. We have sent you a link. Thanks</p>
+        {{/if}}
+    {{/if}}
+</template>

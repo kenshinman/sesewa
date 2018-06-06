@@ -1,0 +1,69 @@
+<template name="newOpportunity">
+    <div class="container">
+        <h2>Create a new Opportunity</h2>
+        <form id="new-opportunity">
+            <div class="col-xs-12 col-sm-8">
+                <div class="form-group form-group-lg">
+<!--                    <label>Requirements</label>-->
+                    <input name="title" type="text" class="form-control no-border-radius" placeholder="Enter Title here" required>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label>Description</label>
+                    <textarea name="description" rows="13" class="form-control no-border-radius" placeholder="Describe this opportunity" id="opportunity_description" required></textarea>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label>Requirements</label>
+                    <textarea  name="requirements" rows="7" class="form-control  no-border-radius" id="opportunity_requirements" required></textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="profile-card profile-card-sidebar">
+                    <div class="profile-sidebar-card-title">Opportunity Type</div>
+                    <label class="radio radio-adjust radio-lg text-muted">
+                        <input type="radio" name="opportunity_type" value="Internship" required> Internship </label>
+                    <label class="radio radio-adjust radio-lg text-muted">
+                        <input type="radio" name="opportunity_type" value="Volunteering" required> Volunteering </label>
+                    <label class="radio radio-adjust radio-lg text-muted">
+                        <input type="radio" name="opportunity_type" value="Job Shadowing" required> Job Shadowing </label>
+                    <label class="radio radio-adjust radio-lg text-muted">
+                        <input type="radio" name="opportunity_type" value="Apprenticeship" required> Apprenticeship </label>
+                </div>
+                <div class="profile-card profile-card-sidebar">
+                    <div class="profile-sidebar-card-title">Other Details</div>
+                    <div class="form-group">
+                        <label>
+                            Location
+                            <a class="popover-trigger fa fa-question-circle-o" tabindex="-1" role="button" data-toggle="popover" data-trigger="focus" data-title="Location" data-content="This is the city where this opportunity is located" data-original-title="" title=""></a>
+                        </label>
+                        <input name="location" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Expiry Date
+                            <a class="popover-trigger fa fa-question-circle-o" tabindex="-1" role="button" data-toggle="popover" data-trigger="focus" data-title="Expiry Date" data-content="This is the last date for applications on this opportunity" data-original-title="" title=""></a>
+                        </label>
+                        <input name="expiry_date" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Length of Program (Duration)</label>
+                        <div class="input-group">
+                            <input name="duration" type="text" class="form-control" required>
+                            <span class="input-group-addon">month(s)</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Intern's Stipend</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">₦</span>
+                            <input name="salary" type="text" class="form-control" required>
+                            <span class="input-group-addon"> / month</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Create Opportunity</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
