@@ -67,5 +67,9 @@ meteortoys:allthings
 lookback:seo
 ostrio:files
 ostrio:templatehelpers
+<<<<<<< HEAD
 pcel:loading
 shell-server
+=======
+pcel:loading
+>>>>>>> cc425160fcc50b8bed024c85f5e582544b51e952
